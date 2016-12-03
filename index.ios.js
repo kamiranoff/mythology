@@ -1,12 +1,17 @@
 // IOS :)
 import React from 'react';
-import { View, Text, AppRegistry } from 'react-native';
+import { View, AppRegistry } from 'react-native';
+
+import Background from './src/components/Background/Background';
+import Header from './src/components/Header/Header';
+import HeroesList from './src/components/HeroesList/HeroesList';
 
 const App = () => (
-  <View>
-    <Text>
-      Hello
-    </Text>
+  <View style={{ flex: 1 }}>
+    <Background>
+      <Header title={'Pantheon'} />
+      <HeroesList />
+    </Background>
   </View>
 );
 
