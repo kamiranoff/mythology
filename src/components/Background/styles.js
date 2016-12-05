@@ -4,6 +4,7 @@ import {
 
 export const styles = StyleSheet.create({
   bg: {
+    backgroundColor: 'transparent',
     flex: 1,
     // remove width and height to override fixed static size
     width: null,

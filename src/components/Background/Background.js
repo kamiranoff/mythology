@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 
 import { styles } from './styles';
 
-const bg = require('image!Background');
+const bg = require('image!oldpaper');
 
 const Background = ({ children }) => (
   <Image source={bg} style={styles.bg}>
