@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text } from 'react-native';
 
 import { styles } from './styles';
@@ -13,5 +13,7 @@ class ClassComponent extends Component {
     );
   }
 }
+
+ClassComponent.propTypes = {};
 
 export default ClassComponent;
