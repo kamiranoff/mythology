@@ -2,12 +2,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+import { Background } from '../commonComponents';
+import LoginForm from '../components/LoginForm/LoginForm';
+
 import { styles } from './styles';
 
 const Loginpage = () => (
-  <View style={styles.mainView}>
-    <Text>Hello</Text>
-  </View>
+  <Background >
+    <LoginForm />
+  </Background>
 );
 
 // Render to the device

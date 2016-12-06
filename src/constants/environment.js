@@ -1,6 +1,13 @@
 const envs = {
   dev: {
     BASE_URL_WS: 'http://localhost:3000/api/',
+    firebaseConf: {
+      apiKey: 'AIzaSyApW4lHNF64NJ4FNwvwvc-lIhyrzG9E09s',
+      authDomain: 'mythology-268a0.firebaseapp.com',
+      databaseURL: 'https://mythology-268a0.firebaseio.com',
+      storageBucket: 'mythology-268a0.appspot.com',
+      messagingSenderId: '912671768924',
+    },
   },
   // les urls de production tapent en recette avant la mise en production effective
   production: {

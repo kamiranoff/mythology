@@ -3,14 +3,15 @@ import { View } from 'react-native';
 
 import { styles } from './styles';
 
-const HeroDetail = ({ children }) => (
+const CardSection = ({ children }) => (
   <View style={styles.containerStyle}>
     {children}
   </View>
 );
 
-HeroDetail.propTypes = {
+CardSection.propTypes = {
   children: PropTypes.node,
 };
 
-export default HeroDetail;
+// export CardSection: CardSection
+export { CardSection };

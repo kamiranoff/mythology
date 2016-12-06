@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import axios from 'axios';
 
-import HeroDetail from '../HeroDetail/HeroDetail';
+import { CardSection } from '../../commonComponents';
 
 import { styles } from './styles';
 
@@ -10,7 +10,6 @@ import getEnvironment from '../../constants/environment';
 
 const ENV = getEnvironment();
 class HeroesList extends Component {
-
 
   constructor() {
     super();
@@ -27,14 +26,14 @@ class HeroesList extends Component {
 
   renderPeople() {
     return this.state.people.map((person, i) => (
-      <HeroDetail
+      <CardSection
         key={person.name + i}
       >
         <Text style={styles.listElementName}>{person.name}</Text>
         <View style={styles.listElementTypeContainer}>
           <Text style={styles.listElementType}>{person.type}</Text>
         </View>
-      </HeroDetail>
+      </CardSection>
     ));
   }
 
