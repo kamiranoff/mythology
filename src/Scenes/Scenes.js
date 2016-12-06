@@ -11,7 +11,7 @@ const TabIcon = ({ selected, title }) => {
   );
 };
 
-const profile = require('image!profile');
+const profile = require('image!helmetbw');
 
 const goToLogin = () => {
   Actions.login({ type: 'push' });
