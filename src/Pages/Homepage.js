@@ -1,13 +1,13 @@
 // IOS :)
 import React from 'react';
 
-import { Background } from '../commonComponents';
+import { MBackground } from '../commonComponents';
 import HeroesList from '../components/HeroesList/HeroesList';
 
 const Homepage = () => (
-  <Background>
+  <MBackground>
     <HeroesList />
-  </Background>
+  </MBackground>
 );
 
 // Render to the device

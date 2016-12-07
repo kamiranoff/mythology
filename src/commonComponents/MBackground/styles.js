@@ -2,6 +2,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import { BACKGROUND_COLOR_1 } from '../../constants/styles';
+
 export const styles = StyleSheet.create({
   mainContainer: {
     marginTop: 64,
@@ -12,7 +14,7 @@ export const styles = StyleSheet.create({
     height: null,
   },
   bg: {
-    backgroundColor: '#f6e9c7',
+    backgroundColor: BACKGROUND_COLOR_1,
     flex: 1,
     // remove width and height to override fixed static size
     width: null,

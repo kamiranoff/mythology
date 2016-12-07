@@ -2,15 +2,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { Background } from '../commonComponents';
+import { MBackground } from '../commonComponents';
 import LoginForm from '../components/LoginForm/LoginForm';
 
 import { styles } from './styles';
 
 const Loginpage = () => (
-  <Background >
+  <MBackground >
     <LoginForm />
-  </Background>
+  </MBackground>
 );
 
 // Render to the device

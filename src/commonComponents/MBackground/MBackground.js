@@ -4,17 +4,18 @@ import { Image, View } from 'react-native';
 import { styles } from './styles';
 
 const bg = require('image!oldpaper');
+const stars = require('image!stars');
 
-const Background = ({ children }) => (
+const MBackground = ({ children }) => (
   <View style={styles.mainContainer}>
-    <Image style={styles.bg}>
+    <Image source={stars} style={styles.bg}>
       {children}
     </Image>
   </View>
 );
 
-Background.propTypes = {
+MBackground.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { Background };
+export { MBackground };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import axios from 'axios';
 
-import { CardSection } from '../../commonComponents';
+import { MCardSection } from '../../commonComponents';
 
 import { styles } from './styles';
 
@@ -26,14 +26,14 @@ class HeroesList extends Component {
 
   renderPeople() {
     return this.state.people.map((person, i) => (
-      <CardSection
+      <MCardSection
         key={person.name + i}
       >
         <Text style={styles.listElementName}>{person.name}</Text>
         <View style={styles.listElementTypeContainer}>
           <Text style={styles.listElementType}>{person.type}</Text>
         </View>
-      </CardSection>
+      </MCardSection>
     ));
   }
 

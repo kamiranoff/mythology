@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from 'react-native';
 
 import { styles } from './styles';
 
-const Button = ({ buttonText, onPress }) => (
+const MButton = ({ buttonText, onPress }) => (
   <TouchableOpacity
     style={styles.button}
     onPress={onPress}
@@ -12,9 +12,9 @@ const Button = ({ buttonText, onPress }) => (
   </TouchableOpacity>
 );
 
-Button.propTypes = {
+MButton.propTypes = {
   buttonText: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
-export { Button };
+export { MButton };

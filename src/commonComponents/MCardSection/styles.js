@@ -2,16 +2,18 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import { BORDER_COLOR } from '../../constants/styles';
+
 export const styles = StyleSheet.create({
   containerStyle: {
     borderWidth: 1,
     borderRadius: 2,
-    borderColor: '#ddd',
+    borderColor: BORDER_COLOR,
     borderBottomWidth: 0,
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 10,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     flexDirection: 'row',
 
   },
