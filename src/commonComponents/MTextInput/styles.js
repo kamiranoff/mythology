@@ -2,7 +2,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { TEXT_COLOR_2, BORDER_COLOR, FONT_SIZE_L, FONT_SIZE_XL } from '../../constants/styles';
+import { TEXT_COLOR_2, TEXT_COLOR_3, BORDER_COLOR, FONT_SIZE_L, FONT_SIZE_XL } from '../../constants/styles';
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,20 +11,23 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
   },
   labelContainer: {
-    paddingLeft: 10,
     justifyContent: 'center',
     flex: 1,
   },
   label: {
     fontSize: FONT_SIZE_XL,
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: 'transparent',
+    color: TEXT_COLOR_3,
   },
   textInput: {
-    color: TEXT_COLOR_2,
-    paddingHorizontal: 5,
+    color: TEXT_COLOR_3,
     fontSize: FONT_SIZE_L,
     height: 40,
-    borderBottomColor: BORDER_COLOR,
-    borderBottomWidth: 2,
+
+  },
+  inputDecoration: {
+    backgroundColor: BORDER_COLOR,
+    height: 2,
   },
 });

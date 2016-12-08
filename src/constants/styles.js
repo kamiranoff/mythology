@@ -2,10 +2,10 @@ import { Platform, StyleSheet } from 'react-native';
 
 
 /* eslint no-unused-vars: ["error", { "varsIgnorePattern": "COLOR_PLANET.*" }] */
-export const COLOR_1 = '#f6e9c7';
+export const TEXT_COLOR_1 = '#f6e9c7';
 export const COLOR_2 = '#234';
 export const TEXT_COLOR_2 = '#444';
-export const COLOR_4 = '';
+export const TEXT_COLOR_3 = '#67998c';
 export const COLOR_5 = '';
 
 export const BACKGROUND_COLOR_1 = '#e1e5e5';

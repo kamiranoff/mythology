@@ -5,10 +5,11 @@ import { styles } from './styles';
 
 const bg = require('image!oldpaper');
 const stars = require('image!stars');
+//source={stars}
 
 const MBackground = ({ children }) => (
   <View style={styles.mainContainer}>
-    <Image source={stars} style={styles.bg}>
+    <Image style={styles.bg}>
       {children}
     </Image>
   </View>
