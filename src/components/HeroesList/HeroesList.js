@@ -13,11 +13,9 @@ class HeroesList extends Component {
 
   constructor() {
     super();
-    console.log(getEnvironment());
     // @NOTE Require mock mythology-server
     axios.get(`${ENV.BASE_URL_WS}people`)
       .then((response) => {
-        console.log(response);
         this.setState({ people: response.data });
       });
   }

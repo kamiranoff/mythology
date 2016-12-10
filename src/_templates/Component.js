@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 
 import { styles } from './styles';
@@ -11,4 +12,6 @@ const Component = () => (
 
 Component.propTypes = {};
 
-export default Component;
+const mapStateToProps = ({}) => ({});
+
+export default connect(mapStateToProps, null)(Component);

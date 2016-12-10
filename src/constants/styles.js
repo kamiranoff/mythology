@@ -13,6 +13,9 @@ export const BACKGROUND_COLOR_2 = '#f3f3f3';
 export const BORDER_COLOR = '#67998c';
 export const SHADOW_COLOR_1 = '#9e7c40';
 
+export const ERROR_TEXT_COLOR = '#e1421d';
+export const ERROR_BORDER_COLOR = '#e1421d';
+export const ERROR_BACKGROUND_COLOR = '#e1421d';
 
 export const FONT_SIZE_M = 16;
 export const FONT_SIZE_L = 18;

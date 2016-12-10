@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
-import { MButton, MTextInput } from '../../commonComponents';
+import { MButton, MTextInput, MSpinner, MErrorMessage } from '../../commonComponents';
 import { styles } from './styles';
 
 class LoginForm extends Component {
@@ -14,8 +14,36 @@ class LoginForm extends Component {
     };
   }
 
+  renderSignInButton() {
+    if (this.props.loading) {
+      return (<MSpinner />);
+    }
+
+    return (
+      <MButton
+        buttonText="Sign in"
+        onPress={() => {
+          this.props.signIn(this.state.username, this.state.password);
+        }}
+      />
+    );
+  }
+
+  renderSignUpButton() {
+    if (this.props.createAccountOption) {
+      return (
+        <MButton
+          buttonText="Create an account"
+          onPress={() => {
+            this.props.createAccount(this.state.username, this.state.password);
+          }}
+        />
+      );
+    }
+    return null;
+  }
+
   render() {
-    console.log(this.props);
     return (
       <View>
         <MTextInput
@@ -32,28 +60,20 @@ class LoginForm extends Component {
           placeholder="Password123"
           secureTextEntry
         />
-        <View>
-          <Text>
-            {this.props.errorMessage}
-
-          </Text>
-        </View>
-        <MButton
-          buttonText="click"
-          onPress={() => {
-            this.props.signInToFirebase(this.state.username, this.state.password);
-          }}
-        />
-
-
+        <MErrorMessage errorMessage={this.props.errorMessage} />
+        {this.renderSignInButton()}
+        {this.renderSignUpButton()}
       </View>
     );
   }
 }
 
 LoginForm.propTypes = {
-  signInToFirebase: PropTypes.func.isRequired,
+  signIn: PropTypes.func.isRequired,
+  createAccount: PropTypes.func.isRequired,
+  createAccountOption: PropTypes.bool.isRequired,
   errorMessage: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default LoginForm;

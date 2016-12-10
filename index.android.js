@@ -1,11 +1,17 @@
-// IOS :)
+// Android :)
 import React from 'react';
 import { AppRegistry } from 'react-native';
+import { Provider } from 'react-redux';
 
 import App from './src/components/App/App';
+import configureStore from './src/store/configureStore';
+
+const store = configureStore();
 
 const Root = () => (
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
 
 // Render to the device

@@ -2,19 +2,16 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 
-import Homepage from '../Pages/Homepage';
-import Loginpage from '../Pages/Loginpage';
+import Homepage from '../../Pages/Homepage';
+import Loginpage from '../../Pages/Loginpage';
+import Logoutpage from '../../Pages/Logoutpage';
+
+import UserIcon from '../UserIcon/UserIcon';
 
 const TabIcon = ({ selected, title }) => {
   return (
     <Text style={{ color: selected ? 'red' : 'black' }}>{title}</Text>
   );
-};
-
-const profile = require('image!helmetbw');
-
-const goToLogin = () => {
-  Actions.login({ type: 'push' });
 };
 
 const style = StyleSheet.create({
@@ -35,56 +32,45 @@ const Scenes = Actions.create(
       key="tabbar"
       tabs={true}
       tabBarStyle={style.tabBarStyle}
+
     >
       <Scene
         key="home"
         title="Pantheon"
         icon={TabIcon}
-        rightButtonImage={profile}
-        onRight={() => {
-          goToLogin();
-        }}
-        rightButtonIconStyle={{ width: 30, height: 30 }}
       >
         <Scene
           key="homepage"
           component={Homepage}
           title="Pantheon"
           initial
+          renderRightButton={() => <UserIcon />}
         />
       </Scene>
       <Scene
         key="gods"
         title="Gods"
         icon={TabIcon}
-        rightButtonImage={profile}
-        onRight={() => {
-          goToLogin();
-        }}
-        rightButtonIconStyle={{ width: 30, height: 30 }}
       >
         <Scene
           key="godsPage"
           component={Homepage}
           title="Gods"
           initial
+          renderRightButton={() => <UserIcon />}
         />
       </Scene>
       <Scene
         key="books"
         title="Books"
         icon={TabIcon}
-        rightButtonImage={profile}
-        onRight={() => {
-          goToLogin();
-        }}
-        rightButtonIconStyle={{ width: 30, height: 30 }}
       >
         <Scene
           key="booksPage"
           component={Homepage}
           title="Books"
           initial
+          renderRightButton={() => <UserIcon />}
         />
       </Scene>
     </Scene>
@@ -92,11 +78,13 @@ const Scenes = Actions.create(
       key="login"
       title="Login"
       component={Loginpage}
-      rightButtonImage={profile}
-      onRight={() => {
-        goToLogin();
-      }}
-      rightButtonIconStyle={{ width: 30, height: 30 }}
+      renderRightButton={() => <UserIcon />}
+    />
+    <Scene
+      key="logout"
+      title="Logout"
+      component={Logoutpage}
+      renderRightButton={() => <UserIcon />}
     />
   </Scene>,
 );

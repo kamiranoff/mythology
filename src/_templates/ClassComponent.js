@@ -1,9 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 
 import { styles } from './styles';
 
 class ClassComponent extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {};
+  }
 
   render() {
     return (
@@ -16,4 +23,7 @@ class ClassComponent extends Component {
 
 ClassComponent.propTypes = {};
 
-export default ClassComponent;
+const mapStateToProps = ({}) => ({});
+
+export default connect(mapStateToProps, null)(ClassComponent);
+
