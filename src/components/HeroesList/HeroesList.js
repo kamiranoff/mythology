@@ -1,33 +1,46 @@
 import React, { Component, PropTypes } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ListView, View, Text } from 'react-native';
 import { connect } from 'react-redux';
 
 import { MCardSection } from '../../commonComponents';
 import { styles } from './styles';
 
-import getEnvironment from '../../constants/environment';
-
-const ENV = getEnvironment();
 class HeroesList extends Component {
 
-  renderPeople() {
-    return this.props.greeks.map((person, i) => (
+  constructor(props) {
+    super(props);
+    this.ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => (r1 !== r2),
+    });
+    this.state = {
+      dataSource: this.ds.cloneWithRows(this.props.greeks),
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ dataSource: this.ds.cloneWithRows(nextProps.greeks) });
+  }
+
+  renderRow(rowData, sectionID, rowID, highlightRow) {
+    return (
       <MCardSection
-        key={person.name + i}
+        key={rowData.name + rowID}
       >
-        <Text style={styles.listElementName}>{person.name}</Text>
+        <Text style={styles.listElementName}>{rowData.name}</Text>
         <View style={styles.listElementTypeContainer}>
-          <Text style={styles.listElementType}>{person.type}</Text>
+          <Text style={styles.listElementType}>{rowData.type}</Text>
         </View>
       </MCardSection>
-    ));
+    );
   }
 
   render() {
     return (
-      <ScrollView style={styles.listContainer}>
-        {this.renderPeople()}
-      </ScrollView>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderRow}
+        style={styles.listContainer}
+      />
     );
   }
 }
