@@ -7,12 +7,19 @@ import firebase from 'firebase';
 import getEnvironment from '../../constants/environment';
 import Scenes from '../Scenes/Scenes';
 
-const RouterWithRedux = connect()(Router);
 import { setLoginStatus } from '../../actions/user';
+import { fetchAllGreeks } from '../../actions/api';
 
+const RouterWithRedux = connect()(Router);
 const ENV = getEnvironment();
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.props.fetchAllGreeks();
+  }
 
   componentWillMount() {
     firebase.initializeApp(ENV.firebaseConf);
@@ -38,6 +45,7 @@ class App extends Component {
 
 App.propTypes = {
   setLoginStatus: PropTypes.func.isRequired,
+  fetchAllGreeks: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
 };
 
@@ -47,4 +55,4 @@ const mapStateToProps = ({
   user,
 });
 
-export default connect(mapStateToProps, { setLoginStatus })(App);
+export default connect(mapStateToProps, { setLoginStatus, fetchAllGreeks })(App);

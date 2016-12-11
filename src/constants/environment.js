@@ -1,6 +1,10 @@
 const envs = {
   dev: {
     BASE_URL_WS: 'http://localhost:3000/api/',
+    API: {
+      GREEKS: 'people',
+      GODS: 'gods',
+    },
     firebaseConf: {
       apiKey: 'AIzaSyApW4lHNF64NJ4FNwvwvc-lIhyrzG9E09s',
       authDomain: 'mythology-268a0.firebaseapp.com',
@@ -16,9 +20,7 @@ const envs = {
 };
 
 // pour eviter de dupliquer les variables identiques
-const envGlobal = {
-
-};
+const envGlobal = {};
 
 const getEnvironment = () => {
   const chosenEnv = (__DEV__) ? 'dev' : 'production';

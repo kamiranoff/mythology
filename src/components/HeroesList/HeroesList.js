@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 import { MCardSection } from '../../commonComponents';
-
 import { styles } from './styles';
 
 import getEnvironment from '../../constants/environment';
@@ -11,19 +10,8 @@ import getEnvironment from '../../constants/environment';
 const ENV = getEnvironment();
 class HeroesList extends Component {
 
-  constructor() {
-    super();
-    // @NOTE Require mock mythology-server
-    axios.get(`${ENV.BASE_URL_WS}people`)
-      .then((response) => {
-        this.setState({ people: response.data });
-      });
-  }
-
-  state = { people: [] };
-
   renderPeople() {
-    return this.state.people.map((person, i) => (
+    return this.props.greeks.map((person, i) => (
       <MCardSection
         key={person.name + i}
       >
@@ -44,4 +32,19 @@ class HeroesList extends Component {
   }
 }
 
-export default HeroesList;
+
+HeroesList.propTypes = {
+  greeks: PropTypes.array.isRequired,
+};
+
+HeroesList.defaultProps = {
+  greeks: [],
+};
+
+const mapStateToProps = ({
+  api: { greeks },
+}) => ({
+  greeks,
+});
+
+export default connect(mapStateToProps, null)(HeroesList);
