@@ -17,8 +17,13 @@ const receiveAllGreeks = (greeks) => {
   };
 };
 
-export function fetchAllGreeks() {
-  const endPoint = ENV.API.GREEKS;
+export function fetchAllGreeks(filter) {
+  let endPoint = ENV.API.GREEKS;
+  if (filter) {
+    const searchTerm = filter.trim().toUpperCase();
+    console.log(searchTerm);
+    endPoint = `${ENV.API.GREEKS}?search=${searchTerm}`;
+  }
 
   return (dispatch) => {
     dispatch(requestAllGreeks());
