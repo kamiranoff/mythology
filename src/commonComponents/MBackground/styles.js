@@ -2,7 +2,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { BACKGROUND_COLOR_1 } from '../../constants/styles';
+import { BACKGROUND_2 } from '../../constants/styles';
 
 export const styles = StyleSheet.create({
   mainContainer: {
@@ -12,9 +12,10 @@ export const styles = StyleSheet.create({
     // remove width and height to override fixed static size
     width: null,
     height: null,
+
   },
   bg: {
-    backgroundColor: BACKGROUND_COLOR_1,
+    backgroundColor: BACKGROUND_2,
     flex: 1,
     // remove width and height to override fixed static size
     width: null,

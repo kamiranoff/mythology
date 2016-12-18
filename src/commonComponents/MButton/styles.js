@@ -3,17 +3,15 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { BORDER_COLOR, FONT_SIZE_XL, TEXT_COLOR_1, TEXT_COLOR_2 } from '../../constants/styles';
+import { FONT_SIZE_XL, TEXT_1, BACKGROUND_3 } from '../../constants/styles';
 
 export const styles = StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    backgroundColor: BORDER_COLOR,
-    borderRadius: 1,
-    height: 40,
+    backgroundColor: BACKGROUND_3,
+    borderRadius: 6,
+    height: 45,
     margin: 10,
   },
   text: {
@@ -21,6 +19,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     fontSize: FONT_SIZE_XL,
     backgroundColor: 'transparent',
-    color: TEXT_COLOR_1,
+    color: TEXT_1,
   },
 });

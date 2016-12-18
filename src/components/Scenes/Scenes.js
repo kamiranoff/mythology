@@ -8,9 +8,11 @@ import Logoutpage from '../../Pages/Logoutpage';
 
 import UserIcon from '../UserIcon/UserIcon';
 
+import { TEXT_2, TEXT_SELECTED_1 } from '../../constants/styles';
+
 const TabIcon = ({ selected, title }) => {
   return (
-    <Text style={{ color: selected ? 'red' : 'black' }}>{title}</Text>
+    <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
   );
 };
 

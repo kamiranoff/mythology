@@ -2,19 +2,14 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { BORDER_COLOR } from '../../constants/styles';
+import { BORDER } from '../../constants/styles';
 
 export const styles = StyleSheet.create({
   containerStyle: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: BORDER_COLOR,
-    borderBottomWidth: 0,
-    marginLeft: 5,
-    marginRight: 5,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: BORDER,
+    paddingHorizontal: 10,
+    paddingVertical: 20,
     flexDirection: 'row',
-
   },
 });
