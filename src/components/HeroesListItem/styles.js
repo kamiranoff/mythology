@@ -19,7 +19,7 @@ import {
 
 export const styles = StyleSheet.create({
   listElementName: {
-    fontSize: 20,
+    fontSize: 16,
     flex: 1,
     color: TEXT_2,
     alignItems: 'center',
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
   },
   listElementType: {
-    fontSize: 15,
+    fontSize: 12,
     textAlign: 'right',
     color: TEXT_1,
     paddingHorizontal: 10,
@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
   primordial_deity: {
     backgroundColor: PRIMORDIAL_DEITY_BACKGROUND,
   },
-  god: {
+  major_olympians: {
     backgroundColor: GOD_BACKGROUND,
   },
   goddess: {

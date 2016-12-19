@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, View, Text } from 'react-native';
+import { ListView, LayoutAnimation} from 'react-native';
 import { connect } from 'react-redux';
 
 import { fetchAllGreeks } from '../../actions/api';
@@ -29,6 +29,10 @@ class HeroesList extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({ dataSource: this.ds.cloneWithRows(nextProps.greeks) });
+  }
+
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
   }
 
   onSearchChange(value) {

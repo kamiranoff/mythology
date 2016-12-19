@@ -11,5 +11,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 20,
     flexDirection: 'row',
+    alignItems:'center', // @TODO Should be dynamic
   },
 });

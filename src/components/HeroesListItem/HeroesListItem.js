@@ -5,8 +5,8 @@ import { MCardSection } from '../../commonComponents';
 import { styles } from './styles';
 
 const HeroesListItem = ({ rowData, rowID, onPress }) => {
-  const typeViewStyleClass = rowData.type.replace(' ', '_');
-  const typeTextStyleClass = `${rowData.type.replace(' ', '_')}_text`;
+  const typeViewStyleClass = rowData.category.replace(' ', '_');
+  const typeTextStyleClass = `${rowData.category.replace(' ', '_')}_text`;
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -21,7 +21,7 @@ const HeroesListItem = ({ rowData, rowID, onPress }) => {
           <Text
             style={[styles.listElementType, styles[typeTextStyleClass]]}
           >
-            {rowData.type}
+            {rowData.category}
           </Text>
         </View>
       </MCardSection>
