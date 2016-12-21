@@ -3,6 +3,7 @@ import { StyleSheet, Text } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 
 import Homepage from '../../Pages/Homepage';
+import SingleHeropage from '../../Pages/SingleHeropage';
 import Loginpage from '../../Pages/Loginpage';
 import Logoutpage from '../../Pages/Logoutpage';
 
@@ -46,6 +47,11 @@ const Scenes = Actions.create(
           component={Homepage}
           title="Pantheon"
           initial
+          renderRightButton={() => <UserIcon />}
+        />
+        <Scene
+          key="singleHeroPage"
+          component={SingleHeropage}
           renderRightButton={() => <UserIcon />}
         />
       </Scene>
