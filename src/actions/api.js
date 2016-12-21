@@ -1,21 +1,35 @@
 import callApi from '../util/apiCaller';
-import { REQUEST_ALL_GREEKS, RECEIVE_ALL_GREEKS } from '../constants/actions';
+import {
+  REQUEST_ALL_GREEKS,
+  RECEIVE_ALL_GREEKS,
+  RECEIVE_ALL_GREEKS_FAILURE,
+} from '../constants/actions';
 import getEnvironment from '../constants/environment';
 
 const ENV = getEnvironment();
 
-const requestAllGreeks = () => {
-  return {
-    type: REQUEST_ALL_GREEKS,
-  };
+
+const handleErrors = (response) => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
 };
 
-const receiveAllGreeks = (greeks) => {
-  return {
-    type: RECEIVE_ALL_GREEKS,
-    greeks,
-  };
-};
+
+const requestAllGreeks = () => ({
+  type: REQUEST_ALL_GREEKS,
+});
+
+const receiveAllGreeks = (greeks) => ({
+  type: RECEIVE_ALL_GREEKS,
+  greeks,
+});
+
+const receiveAllGreeksFailed = (e) => ({
+  type: RECEIVE_ALL_GREEKS_FAILURE,
+  error: e,
+});
 
 export function fetchAllGreeks(filter) {
   let endPoint = ENV.API.GREEKS;
@@ -27,8 +41,13 @@ export function fetchAllGreeks(filter) {
 
   return (dispatch) => {
     dispatch(requestAllGreeks());
-    return callApi(endPoint).then((greeks) => {
-      dispatch(receiveAllGreeks(greeks));
-    });
+    return callApi(endPoint)
+      .then(handleErrors)
+      .then((greeks) => {
+        dispatch(receiveAllGreeks(greeks));
+      }).catch((e) => {
+        console.log(e);
+        dispatch(receiveAllGreeksFailed(e));
+      });
   };
 }
