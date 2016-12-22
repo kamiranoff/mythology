@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, LayoutAnimation} from 'react-native';
+import { ListView, LayoutAnimation } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 
 import { fetchAllGreeks } from '../../actions/api';
 
@@ -40,8 +41,8 @@ class HeroesList extends Component {
     this.setState({ searchTerm: value });
   }
 
-  onRowPress(id) {
-    console.log(id);
+  onRowPress(hero) {
+    Actions.singleHeroPage({ hero, title: hero.name });
   }
 
   renderHeader() {
@@ -58,8 +59,8 @@ class HeroesList extends Component {
     return (
       <HeroesListItem
         rowData={rowData}
-        rowId={rowID}
-        onPress={() => this.onRowPress(rowID)}
+        rowId={rowData._id}
+        onPress={() => this.onRowPress(rowData)}
       />
     );
   }

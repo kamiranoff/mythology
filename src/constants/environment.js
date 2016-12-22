@@ -1,8 +1,8 @@
 const envs = {
   dev: {
-    BASE_URL_WS: 'http://localhost:3000/api/',
+    BASE_URL_WS: 'http://localhost:3333/api/',
     API: {
-      GREEKS: 'people',
+      GREEKS: 'primordial-gods',
       GODS: 'gods',
     },
     firebaseConf: {
