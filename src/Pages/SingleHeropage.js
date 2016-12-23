@@ -7,12 +7,6 @@ import { styles } from './styles';
 
 class SingleHeropage extends Component {
 
-  constructor(props) {
-    super(props);
-
-    console.log(props);
-  }
-
   render() {
     return (
       <MBackground>
