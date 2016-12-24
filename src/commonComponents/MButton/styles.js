@@ -5,7 +5,7 @@ import {
 
 import { FONT_SIZE_XL, TEXT_1, BACKGROUND_3 } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',

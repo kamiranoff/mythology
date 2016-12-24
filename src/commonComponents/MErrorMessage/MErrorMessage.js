@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 
-import { styles } from './styles';
+import styles from './styles';
 
 const MErrorMessage = ({ errorMessage }) => (
   <View>

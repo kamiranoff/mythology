@@ -4,7 +4,7 @@ import {
 
 import { FONT_SIZE_M, ERROR_TEXT } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   errorMessage: {
     textAlign: 'center',
     padding: 10,

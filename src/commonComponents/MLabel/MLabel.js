@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 
-import { styles } from './styles';
+import styles from './styles';
 
 const MLabel = ({ category }) => {
   const typeViewStyleClass = category.replace(' ', '_');
@@ -23,6 +22,5 @@ const MLabel = ({ category }) => {
 MLabel.propTypes = {
   category: PropTypes.string.isRequired,
 };
-
 
 export { MLabel };

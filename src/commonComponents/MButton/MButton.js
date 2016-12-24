@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
-import { styles } from './styles';
+import styles from './styles';
 
 const MButton = ({ buttonText, onPress }) => (
   <TouchableOpacity

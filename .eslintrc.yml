@@ -4,8 +4,12 @@ plugins:
   - react
   - jsx-a11y
   - import
+  - react-native
 rules:
-  react/jsx-filename-extension : off
+  no-underscore-dangle: 0
+  react/jsx-filename-extension: 0
+  react/forbid-prop-types: 1
 globals:
   __DEV__: true
   __PROD__: true
+  fetch: true

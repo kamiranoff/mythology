@@ -46,7 +46,7 @@ class App extends Component {
 App.propTypes = {
   setLoginStatus: PropTypes.func.isRequired,
   fetchAllGreeks: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
+  user: PropTypes.shape(),
 };
 
 const mapStateToProps = ({

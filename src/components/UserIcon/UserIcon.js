@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { styles } from './styles';
+import styles from './styles';
 
-const profile = require('image!helmet');
-const profilebw = require('image!helmetbw');
+const profile = require('../../assets/images/helmet/helmet.png');
+const profilebw = require('../../assets/images/helmetbw/helmetbw.png');
 
 const goToLogin = (isLoggedIn) => {
   // if firebase has not responded return.
@@ -21,7 +21,6 @@ const goToLogin = (isLoggedIn) => {
   if (isLoggedIn) {
     Actions.logout({ type: 'push' });
   }
-
 };
 
 const renderProfileImage = (isLoggedIn) => {

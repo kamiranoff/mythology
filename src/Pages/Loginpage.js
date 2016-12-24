@@ -8,8 +8,6 @@ import firebase from 'firebase';
 import { MBackground } from '../commonComponents';
 import LoginForm from '../components/LoginForm/LoginForm';
 
-import { styles } from './styles';
-
 class Loginpage extends Component {
   constructor() {
     super();

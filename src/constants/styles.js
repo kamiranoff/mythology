@@ -1,8 +1,3 @@
-import { Platform, StyleSheet } from 'react-native';
-
-
-/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "COLOR_PLANET.*" }] */
-
 const COLOR_1 = '#f6e9c7';
 const COLOR_2 = '#234';
 const COLOR_3 = '#444';

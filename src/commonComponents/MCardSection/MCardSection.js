@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 
-import { styles } from './styles';
+import styles from './styles';
 
 const MCardSection = ({ children }) => (
   <View style={styles.containerStyle}>
@@ -13,5 +13,4 @@ MCardSection.propTypes = {
   children: PropTypes.node,
 };
 
-// export MCardSection: MCardSection
 export { MCardSection };

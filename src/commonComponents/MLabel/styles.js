@@ -17,7 +17,7 @@ import {
   NYMPH_BACKGROUND,
 } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   listElementTypeContainer: {
     alignSelf: 'flex-end',
     borderRadius: 6,

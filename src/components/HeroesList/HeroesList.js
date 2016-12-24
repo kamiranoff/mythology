@@ -8,7 +8,7 @@ import { fetchAllGreeks } from '../../actions/api';
 import { MSearchInput } from '../../commonComponents';
 import HeroesListItem from '../HeroesListItem/HeroesListItem';
 
-import { styles } from './styles';
+import styles from './styles';
 
 class HeroesList extends Component {
 
@@ -25,7 +25,6 @@ class HeroesList extends Component {
     this.renderHeader = this.renderHeader.bind(this);
     this.renderRow = this.renderRow.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
-    this.onRowPress = this.onRowPress.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,6 +40,7 @@ class HeroesList extends Component {
     this.setState({ searchTerm: value });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   onRowPress(hero) {
     Actions.singleHeroPage({ hero, title: hero.name });
   }
@@ -55,11 +55,12 @@ class HeroesList extends Component {
     );
   }
 
+  // eslint-disable-next-line no-unused-vars
   renderRow(rowData, sectionID, rowID, highlightRow) {
     return (
       <HeroesListItem
         rowData={rowData}
-        rowId={rowData._id}
+        rowID={rowData._id}
         onPress={() => this.onRowPress(rowData)}
       />
     );

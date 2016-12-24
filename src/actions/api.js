@@ -12,21 +12,21 @@ const requestAllGreeks = () => ({
   type: REQUEST_ALL_GREEKS,
 });
 
-const receiveAllGreeks = (greeks) => ({
+const receiveAllGreeks = greeks => ({
   type: RECEIVE_ALL_GREEKS,
   greeks,
 });
 
-const receiveAllGreeksFailed = (e) => ({
+const receiveAllGreeksFailed = e => ({
   type: RECEIVE_ALL_GREEKS_FAILURE,
   error: e,
 });
 
+// eslint-disable-next-line import/prefer-default-export
 export function fetchAllGreeks(filter) {
   let endPoint = ENV.API.GREEKS;
   if (filter) {
     const searchTerm = filter.trim().toUpperCase();
-    console.log(searchTerm);
     endPoint = `${ENV.API.GREEKS}?search=${searchTerm}`;
   }
 

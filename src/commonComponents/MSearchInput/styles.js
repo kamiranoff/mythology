@@ -4,14 +4,14 @@ import {
 
 import { TEXT_3, FONT_SIZE_L, BACKGROUND_1, BACKGROUND_3 } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
     paddingHorizontal: 20,
     paddingVertical: 20,
     backgroundColor: BACKGROUND_3,
-    alignItems:'center',
+    alignItems: 'center',
   },
   textInput: {
     flex: 9,

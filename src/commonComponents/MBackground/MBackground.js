@@ -1,17 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Image, View, ScrollView } from 'react-native';
 
-import { styles } from './styles';
-
-const bg = require('image!oldpaper');
-const stars = require('image!stars');
-//source={stars}
+import styles from './styles';
 
 const MBackground = ({ children, scrollView }) => {
   let view = null;
   if (scrollView) {
     view = (
-      <View  style={styles.mainContainer}>
+      <View style={styles.mainContainer}>
         <ScrollView>
           <Image style={styles.bg}>
             {children}

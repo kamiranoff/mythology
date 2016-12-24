@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import React, { PropTypes } from 'react';
+import { Text } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 
 import Homepage from '../../Pages/Homepage';
-import SingleHeropage from '../../Pages/SingleHeropage';
+import SingleHeropage from '../../Pages/SingleHeroPage/SingleHeropage';
 import Loginpage from '../../Pages/Loginpage';
 import Logoutpage from '../../Pages/Logoutpage';
 
@@ -11,20 +11,12 @@ import UserIcon from '../UserIcon/UserIcon';
 
 import { TEXT_2, TEXT_SELECTED_1 } from '../../constants/styles';
 
-const TabIcon = ({ selected, title }) => {
-  return (
-    <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
-  );
-};
+import styles from './styles';
 
-const style = StyleSheet.create({
-  tabBarStyle: {
-    borderTopWidth: .5,
-    borderColor: '#b7b7b7',
-    backgroundColor: 'white',
-    opacity: 1,
-  },
-});
+const TabIcon = ({ selected, title }) => (
+  <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
+);
+
 
 const Scenes = Actions.create(
   <Scene
@@ -33,8 +25,8 @@ const Scenes = Actions.create(
   >
     <Scene
       key="tabbar"
-      tabs={true}
-      tabBarStyle={style.tabBarStyle}
+      tabs
+      tabBarStyle={styles.tabBarStyle}
 
     >
       <Scene
@@ -96,5 +88,10 @@ const Scenes = Actions.create(
     />
   </Scene>,
 );
+
+TabIcon.propTypes = {
+  selected: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+};
 
 export default Scenes;

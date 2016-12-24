@@ -4,7 +4,7 @@ import {
 
 import { BACKGROUND_2 } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   mainContainer: {
     marginTop: 64,
     marginBottom: 50,

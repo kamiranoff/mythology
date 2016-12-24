@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
 
 import { MButton, MTextInput, MSpinner, MErrorMessage } from '../../commonComponents';
-import { styles } from './styles';
 
 class LoginForm extends Component {
 

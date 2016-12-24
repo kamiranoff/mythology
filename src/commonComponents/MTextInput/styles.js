@@ -2,9 +2,9 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { TEXT_2, TEXT_3, BORDER, FONT_SIZE_L, FONT_SIZE_XL } from '../../constants/styles';
+import { TEXT_3, BORDER, FONT_SIZE_L, FONT_SIZE_XL } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     height: 80,
     marginHorizontal: 10,

@@ -7,7 +7,7 @@ import {
   TEXT_2,
 } from '../../constants/styles';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   listElementName: {
     fontSize: 16,
     flex: 1,

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
 import { TEXT_3 } from '../../constants/styles';
-import { styles } from './styles';
+import styles from './styles';
 
 const MTextInput = ({
   label,

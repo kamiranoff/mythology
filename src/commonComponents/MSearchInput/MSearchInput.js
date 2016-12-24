@@ -2,29 +2,26 @@ import React, { PropTypes } from 'react';
 import { View, Image, TextInput } from 'react-native';
 
 import { TEXT_3 } from '../../constants/styles';
-import { styles } from './styles';
+import styles from './styles';
 
-const glass = require('image!magnifying-glass');
-const glassbw = require('image!magnifying-glass-bw');
+const glass = require('./../../assets/images/magnifying-glass/magnifying-glass.png');
+const glassbw = require('./../../assets/images/magnifying-glass-bw/magnifying-glass-bw.png');
 
-const MSearchInput = ({ value, onSearchChange, placeholder }) => {
-
-  return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.textInput}
-        value={value}
-        placeholder={placeholder}
-        placesholderTextColor={TEXT_3}
-        onChangeText={(value) => onSearchChange(value)}
-      />
-      <Image
-        style={styles.glass}
-        source={value ? glass : glassbw}
-      />
-    </View>
-  );
-};
+const MSearchInput = ({ value, onSearchChange, placeholder }) => (
+  <View style={styles.container}>
+    <TextInput
+      style={styles.textInput}
+      value={value}
+      placeholder={placeholder}
+      placesholderTextColor={TEXT_3}
+      onChangeText={val => onSearchChange(val)}
+    />
+    <Image
+      style={styles.glass}
+      source={value ? glass : glassbw}
+    />
+  </View>
+);
 
 MSearchInput.propTypes = {
   value: PropTypes.string.isRequired,

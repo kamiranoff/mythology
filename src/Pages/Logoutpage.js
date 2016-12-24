@@ -4,8 +4,6 @@ import firebase from 'firebase';
 
 import { MBackground, MButton, MErrorMessage } from '../commonComponents';
 
-import { styles } from './styles';
-
 class Logoutpage extends Component {
   constructor() {
     super();
@@ -36,7 +34,9 @@ class Logoutpage extends Component {
             this.logout();
           }}
         />
-        <MErrorMessage errorMessage={this.state.errorMsg}/>
+        <MErrorMessage
+          errorMessage={this.state.errorMsg}
+        />
       </MBackground>
     );
   }
