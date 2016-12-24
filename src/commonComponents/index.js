@@ -6,3 +6,4 @@ export * from './MTextInput/MTextInput';
 export * from './MSearchInput/MSearchInput';
 export * from './MSpinner/MSpinner';
 export * from './MErrorMessage/MErrorMessage';
+export * from './MLabel/MLabel';
