@@ -1,27 +1,35 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Image } from 'react-native';
-import { MBackground } from '../commonComponents';
+import { MBackground, MLabel } from '../commonComponents';
 
 import { styles } from './styles';
 
 class SingleHeropage extends Component {
 
   render() {
+    const {
+      images,
+      name,
+      greekName,
+      romanName,
+      category,
+      description,
+    } = this.props.hero;
     return (
-      <MBackground>
-
-        <View style={{ height: 200 }}>
+      <MBackground scrollView>
+        <View style={{ height: 300 }}>
           <Image
-            style={{ resizeMode: 'cover', height: 200 }}
+            style={{ resizeMode: 'cover', height: 300 }}
             source={{
-              uri: this.props.hero.images[1].regular,
+              uri: images[1].regular,
             }}/>
         </View>
-        <View style={{ paddingHorizontal: 10 }}>
+        <MLabel category={category} />
+        <View style={{ paddingHorizontal: 10, marginBottom: 30 }}>
           <Text
             style={{ paddingTop: 20, textAlign: 'center', fontSize: 40 }}
-          >{this.props.hero.name}
+          >{name}
           </Text>
           <Text style={{
             fontStyle: 'italic',
@@ -29,16 +37,18 @@ class SingleHeropage extends Component {
             paddingBottom: 20,
             textAlign: 'center',
             fontSize: 15,
-          }}>{this.props.hero.greekName} - {this.props.hero.romanName}</Text>
-          <Text>{this.props.hero.description}</Text>
+          }}>{greekName} - {romanName}</Text>
+
+          <Text>{description}</Text>
         </View>
       </MBackground>
-
     );
   }
 }
 
-SingleHeropage.propTypes = {};
+SingleHeropage.propTypes = {
+  hero: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = ({}) => ({});
 
