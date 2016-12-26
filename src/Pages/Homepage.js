@@ -1,6 +1,4 @@
-// IOS :)
 import React from 'react';
-
 import { MBackground } from '../commonComponents';
 import HeroesList from '../components/HeroesList/HeroesList';
 
