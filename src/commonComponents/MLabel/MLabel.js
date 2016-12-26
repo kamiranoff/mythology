@@ -1,19 +1,28 @@
 import React, { PropTypes } from 'react';
 import { View, Text } from 'react-native';
 
+import Helpers from '../../util/Helpers';
+
 import styles from './styles';
 
-const MLabel = ({ category }) => {
-  const typeViewStyleClass = category.replace(' ', '_');
-  const typeTextStyleClass = `${category.replace(' ', '_')}_text`;
+const MLabel = ({ category, labelStyle }) => {
+  let propStyle = null;
+  if (labelStyle) {
+    propStyle = labelStyle;
+  }
+  const typeViewStyleClass = category.replace(/ /g, '_');
+  const typeTextStyleClass = `${category.replace(/ /g, '_')}_text`;
   return (
     <View
-      style={[styles.listElementTypeContainer, styles[typeViewStyleClass]]}
+      style={[
+        styles.listElementTypeContainer,
+        styles[typeViewStyleClass],
+        propStyle]}
     >
       <Text
         style={[styles.listElementType, styles[typeTextStyleClass]]}
       >
-        {category}
+        {Helpers.capitalizeFirstLetter(category)}
       </Text>
     </View>
   );
@@ -21,6 +30,7 @@ const MLabel = ({ category }) => {
 
 MLabel.propTypes = {
   category: PropTypes.string.isRequired,
+  labelStyle: PropTypes.object,
 };
 
 export { MLabel };

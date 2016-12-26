@@ -10,25 +10,28 @@ import {
   DEMIGOD_BACKGROUND,
   DEITY_BACKGROUND,
   SEA_DEITY_BACKGROUND,
+  SKY_DEITY_BACKGROUND,
   PRIMORDIAL_DEITY_BACKGROUND,
   TEXT_1,
   GOD_BACKGROUND,
   GIANT_BACKGOURND,
   NYMPH_BACKGROUND,
+  RUSTIC_DEITY_BACKGROUND,
 } from '../../constants/styles';
 
 export default StyleSheet.create({
   listElementTypeContainer: {
-    alignSelf: 'flex-end',
     borderRadius: 6,
   },
   listElementType: {
     fontSize: 12,
-    textAlign: 'right',
     color: TEXT_1,
     paddingHorizontal: 10,
     paddingVertical: 5,
     backgroundColor: 'transparent',
+  },
+  twelve_titan: {
+    backgroundColor: TITAN_BACKGROUND,
   },
   titan: {
     backgroundColor: TITAN_BACKGROUND,
@@ -49,8 +52,17 @@ export default StyleSheet.create({
   sea_deity: {
     backgroundColor: SEA_DEITY_BACKGROUND,
   },
-  primordial_deity: {
+  sky_deity: {
+    backgroundColor: SKY_DEITY_BACKGROUND,
+  },
+  sky_deity_text: {
+    color: TEXT_2,
+  },
+  chthonic_deity: {
     backgroundColor: PRIMORDIAL_DEITY_BACKGROUND,
+  },
+  rustic_deity: {
+    backgroundColor: RUSTIC_DEITY_BACKGROUND,
   },
   major_olympians: {
     backgroundColor: GOD_BACKGROUND,

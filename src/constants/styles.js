@@ -12,6 +12,8 @@ const COLOR_11 = '#ff9b37';
 const COLOR_12 = '#85958b';
 const COLOR_13 = '#401539';
 const COLOR_14 = '#f26d7d';
+const COLOR_15 = '#87CEEB';
+const COLOR_16 = '#608341';
 // TEXT
 export const TEXT_1 = COLOR_1;
 export const TEXT_4 = COLOR_2;
@@ -41,7 +43,8 @@ export const PRIMORDIAL_DEITY_BACKGROUND = COLOR_12;
 export const GOD_BACKGROUND = COLOR_13;
 export const GIANT_BACKGOURND = COLOR_5;
 export const NYMPH_BACKGROUND = COLOR_14;
-
+export const SKY_DEITY_BACKGROUND = COLOR_15;
+export const RUSTIC_DEITY_BACKGROUND = COLOR_16;
 // FONTS
 export const FONT_SIZE_M = 16;
 export const FONT_SIZE_L = 18;
