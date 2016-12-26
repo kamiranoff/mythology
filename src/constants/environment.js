@@ -2,7 +2,7 @@ const envs = {
   dev: {
     BASE_URL_WS: 'http://localhost:3333/api/',
     API: {
-      GREEKS: 'primordial-gods',
+      GREEKS: 'all',
       GODS: 'gods',
     },
     firebaseConf: {
