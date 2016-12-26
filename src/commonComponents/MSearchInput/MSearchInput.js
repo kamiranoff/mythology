@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Image, TextInput } from 'react-native';
+import { debounce } from 'lodash';
 
 import { TEXT_3 } from '../../constants/styles';
 import styles from './styles';
@@ -7,21 +8,34 @@ import styles from './styles';
 const glass = require('./../../assets/images/magnifying-glass/magnifying-glass.png');
 const glassbw = require('./../../assets/images/magnifying-glass-bw/magnifying-glass-bw.png');
 
-const MSearchInput = ({ value, onSearchChange, placeholder }) => (
-  <View style={styles.container}>
-    <TextInput
-      style={styles.textInput}
-      value={value}
-      placeholder={placeholder}
-      placesholderTextColor={TEXT_3}
-      onChangeText={val => onSearchChange(val)}
-    />
-    <Image
-      style={styles.glass}
-      source={value ? glass : glassbw}
-    />
-  </View>
-);
+class MSearchInput extends Component {
+  constructor() {
+    super();
+    this.debounceSearch = debounce(this.debounceSearch, 300);
+  }
+
+  debounceSearch(input) {
+    this.props.onSearchChange(input);
+  }
+
+  render() {
+    const { value, placeholder } = this.props;
+    return (
+      <View style={styles.container}>
+        <TextInput
+          style={styles.textInput}
+          placeholder={placeholder}
+          placesholderTextColor={TEXT_3}
+          onChangeText={input => this.debounceSearch(input)}
+        />
+        <Image
+          style={styles.glass}
+          source={value ? glass : glassbw}
+        />
+      </View>
+    );
+  }
+}
 
 MSearchInput.propTypes = {
   value: PropTypes.string.isRequired,

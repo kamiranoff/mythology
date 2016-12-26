@@ -48,7 +48,7 @@ class HeroesList extends Component {
   renderHeader() {
     return (
       <MSearchInput
-        placeholder="Search"
+        placeholder="Search by name or category"
         value={this.state.searchTerm}
         onSearchChange={this.onSearchChange}
       />
