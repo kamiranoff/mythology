@@ -4,6 +4,23 @@ import { MBackground, MLabel } from '../../commonComponents';
 
 import styles from './styles';
 
+const renderImage = (images) => {
+  const imageFromApi = images.regular;
+  if (imageFromApi) {
+    return (
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: imageFromApi,
+          }}
+        />
+      </View>
+    );
+  }
+  return null;
+};
+
 const SingleHeropage = ({ hero }) => {
   const {
     images,
@@ -13,18 +30,18 @@ const SingleHeropage = ({ hero }) => {
     category,
     description,
   } = hero;
+
   return (
     <MBackground scrollView>
-      <View style={styles.imageContainer}>
-        <Image
-          style={styles.image}
-          source={{
-            uri: images[1].regular,
-          }}
-        />
-      </View>
+      {renderImage(images)}
       <MLabel
         category={category}
+        labelStyle={{
+          position: 'absolute',
+          top: 5,
+          right: 5,
+          zIndex: 1,
+        }}
       />
       <View style={styles.descriptionContainer}>
         <Text
@@ -32,7 +49,7 @@ const SingleHeropage = ({ hero }) => {
         >{name}
         </Text>
         <Text style={styles.greekName}>
-          {greekName} - {romanName}
+          {greekName}{romanName ? ` - ${romanName}` : null }
         </Text>
 
         <Text>{description}</Text>
