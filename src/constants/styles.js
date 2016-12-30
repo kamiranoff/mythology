@@ -14,6 +14,8 @@ const COLOR_13 = '#401539';
 const COLOR_14 = '#f26d7d';
 const COLOR_15 = '#87CEEB';
 const COLOR_16 = '#608341';
+const COLOR_17 = '#ffc05c';
+
 // TEXT
 export const TEXT_1 = COLOR_1;
 export const TEXT_4 = COLOR_2;
@@ -45,6 +47,8 @@ export const GIANT_BACKGOURND = COLOR_5;
 export const NYMPH_BACKGROUND = COLOR_14;
 export const SKY_DEITY_BACKGROUND = COLOR_15;
 export const RUSTIC_DEITY_BACKGROUND = COLOR_16;
+export const HERO_BACKGROUND = COLOR_17;
+
 // FONTS
 export const FONT_SIZE_M = 16;
 export const FONT_SIZE_L = 18;

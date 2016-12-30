@@ -17,6 +17,7 @@ import {
   GIANT_BACKGOURND,
   NYMPH_BACKGROUND,
   RUSTIC_DEITY_BACKGROUND,
+  HERO_BACKGROUND,
 } from '../../constants/styles';
 
 export default StyleSheet.create({
@@ -78,5 +79,11 @@ export default StyleSheet.create({
   },
   nymph: {
     backgroundColor: NYMPH_BACKGROUND,
+  },
+  hero: {
+    backgroundColor: HERO_BACKGROUND,
+  },
+  hero_text: {
+    color: TEXT_2,
   },
 });
