@@ -45,6 +45,8 @@ const SingleHeropage = ({ hero }) => {
       />
       <View style={styles.descriptionContainer}>
         <Text
+          adjustsFontSizeToFit
+          allowFontScaling
           style={styles.name}
         >{name}
         </Text>

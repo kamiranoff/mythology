@@ -3,6 +3,7 @@ import {
   REQUEST_ALL_GREEKS,
   RECEIVE_ALL_GREEKS,
   RECEIVE_ALL_GREEKS_FAILURE,
+
 } from '../constants/actions';
 import getEnvironment from '../constants/environment';
 
@@ -27,7 +28,7 @@ export function fetchAllGreeks(filter) {
   let endPoint = ENV.API.GREEKS;
   if (filter) {
     const searchTerm = filter.trim().toUpperCase();
-    endPoint = `${ENV.API.GREEKS}?search=${searchTerm}`;
+    endPoint = `${endPoint}?search=${searchTerm}`;
   }
 
   return (dispatch) => {

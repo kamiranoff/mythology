@@ -14,8 +14,11 @@ export default StyleSheet.create({
   },
   name: {
     paddingTop: 20,
+    paddingHorizontal: 20,
     textAlign: 'center',
     fontSize: 40,
+    flex: 1,
+    height: 100,
   },
   greekName: {
     fontStyle: 'italic',

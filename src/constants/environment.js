@@ -3,7 +3,7 @@ const envs = {
     BASE_URL_WS: 'http://localhost:3333/api/',
     API: {
       GREEKS: 'all',
-      GODS: 'gods',
+      BOOKS: 'books',
     },
     firebaseConf: {
       apiKey: 'AIzaSyApW4lHNF64NJ4FNwvwvc-lIhyrzG9E09s',
