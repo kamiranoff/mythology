@@ -8,7 +8,8 @@ import getEnvironment from '../../constants/environment';
 import Scenes from '../Scenes/Scenes';
 
 import { setLoginStatus } from '../../actions/user';
-import { fetchAllGreeks } from '../../actions/api';
+import { fetchAllGreeks } from '../../actions/figures';
+import { fetchBooks } from '../../actions/books';
 
 const RouterWithRedux = connect()(Router);
 const ENV = getEnvironment();
@@ -19,6 +20,7 @@ class App extends Component {
     super(props);
 
     this.props.fetchAllGreeks();
+    this.props.fetchBooks();
   }
 
   componentWillMount() {
@@ -46,6 +48,7 @@ class App extends Component {
 App.propTypes = {
   setLoginStatus: PropTypes.func.isRequired,
   fetchAllGreeks: PropTypes.func.isRequired,
+  fetchBooks: PropTypes.func.isRequired,
   user: PropTypes.shape(),
 };
 
@@ -55,4 +58,9 @@ const mapStateToProps = ({
   user,
 });
 
-export default connect(mapStateToProps, { setLoginStatus, fetchAllGreeks })(App);
+export default connect(mapStateToProps,
+  {
+    setLoginStatus,
+    fetchAllGreeks,
+    fetchBooks,
+  })(App);

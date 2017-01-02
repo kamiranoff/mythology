@@ -3,7 +3,9 @@ import { Text } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 
 import Homepage from '../../Pages/Homepage';
-import SingleHeropage from '../../Pages/SingleHeroPage/SingleHeropage';
+import SingleHeropage from '../../Pages/SingleHeropage/SingleHeropage';
+import BookListpage from '../../Pages/BookListpage';
+import SingleBookpage from '../../Pages/SingleBookpage/SingleBookpage';
 import Loginpage from '../../Pages/Loginpage';
 import Logoutpage from '../../Pages/Logoutpage';
 
@@ -67,9 +69,14 @@ const Scenes = Actions.create(
       >
         <Scene
           key="booksPage"
-          component={Homepage}
+          component={BookListpage}
           title="Books"
           initial
+          renderRightButton={() => <UserIcon />}
+        />
+        <Scene
+          key="singleBookPage"
+          component={SingleBookpage}
           renderRightButton={() => <UserIcon />}
         />
       </Scene>

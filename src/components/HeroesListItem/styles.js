@@ -8,7 +8,7 @@ import {
 } from '../../constants/styles';
 
 export default StyleSheet.create({
-  listElementName: {
+  listElementTitle: {
     fontSize: 16,
     flex: 1,
     color: TEXT_2,

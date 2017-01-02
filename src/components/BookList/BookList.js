@@ -3,22 +3,21 @@ import { ListView, LayoutAnimation } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 
-import { fetchAllGreeks } from '../../actions/figures';
-
 import { MSearchInput } from '../../commonComponents';
-import HeroesListItem from '../HeroesListItem/HeroesListItem';
+import BookListItem from '../BookListItem/BookListItem';
 
 import styles from './styles';
 
-class HeroesList extends Component {
+class BookList extends Component {
 
   constructor(props) {
     super(props);
+
     this.ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => (r1 !== r2),
     });
     this.state = {
-      dataSource: this.ds.cloneWithRows(this.props.greeks),
+      dataSource: this.ds.cloneWithRows(this.props.books),
       searchTerm: '',
     };
 
@@ -28,7 +27,7 @@ class HeroesList extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ dataSource: this.ds.cloneWithRows(nextProps.greeks) });
+    this.setState({ dataSource: this.ds.cloneWithRows(nextProps.books) });
   }
 
   componentWillUpdate() {
@@ -36,19 +35,18 @@ class HeroesList extends Component {
   }
 
   onSearchChange(value) {
-    this.props.fetchAllGreeks(value);
     this.setState({ searchTerm: value });
   }
 
   // eslint-disable-next-line class-methods-use-this
-  onRowPress(hero) {
-    Actions.singleHeroPage({ hero, title: hero.name });
+  onRowPress(book) {
+    Actions.singleBookPage({ book, title: book.title });
   }
 
   renderHeader() {
     return (
       <MSearchInput
-        placeholder="Search by name or category"
+        placeholder="Search by title or author"
         value={this.state.searchTerm}
         onSearchChange={this.onSearchChange}
       />
@@ -58,7 +56,7 @@ class HeroesList extends Component {
   // eslint-disable-next-line no-unused-vars
   renderRow(rowData, sectionID, rowID, highlightRow) {
     return (
-      <HeroesListItem
+      <BookListItem
         rowData={rowData}
         rowID={rowData._id}
         onPress={() => this.onRowPress(rowData)}
@@ -80,19 +78,18 @@ class HeroesList extends Component {
 }
 
 
-HeroesList.propTypes = {
-  greeks: PropTypes.array.isRequired,
-  fetchAllGreeks: PropTypes.func.isRequired,
+BookList.propTypes = {
+  books: PropTypes.array.isRequired,
 };
 
-HeroesList.defaultProps = {
+BookList.defaultProps = {
   greeks: [],
 };
 
 const mapStateToProps = ({
-  figures: { greeks },
+  books: { books },
 }) => ({
-  greeks,
+  books,
 });
 
-export default connect(mapStateToProps, { fetchAllGreeks })(HeroesList);
+export default connect(mapStateToProps, null)(BookList);

@@ -11,7 +11,11 @@ const HeroesListItem = ({ rowData, rowID, onPress }) => (
     <MCardSection
       key={rowData.name + rowID}
     >
-      <Text style={styles.listElementName}>{rowData.name}</Text>
+      <Text
+        style={styles.listElementTitle}
+      >
+        {rowData.name}
+      </Text>
       <MLabel
         category={rowData.category}
       />
