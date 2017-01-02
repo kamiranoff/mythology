@@ -10,8 +10,8 @@ const MLabel = ({ category, labelStyle }) => {
   if (labelStyle) {
     propStyle = labelStyle;
   }
-  const typeViewStyleClass = category.replace(/ /g, '_');
-  const typeTextStyleClass = `${category.replace(/ /g, '_')}_text`;
+  const typeViewStyleClass = category.replace(/ |\//g, '_');
+  const typeTextStyleClass = `${category.replace(/ |\//g, '_')}_text`;
   return (
     <View
       style={[
