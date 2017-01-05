@@ -1,12 +1,28 @@
-import React from 'react';
-import { MBackground } from '../commonComponents';
-import HeroesList from '../components/HeroesList/HeroesList';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { MBackground, MQuote } from '../commonComponents';
 
-const Homepage = () => (
+const Homepage = ({ quote }) => (
   <MBackground>
-    <HeroesList />
+    <MQuote
+      quote={quote.quote}
+      author={quote.author}
+      note={quote.note}
+      book={quote.book}
+    />
   </MBackground>
 );
 
+Homepage.propTypes = {
+  quote: PropTypes.object.isRequired,
+
+};
+
+const mapStateToProps = ({
+  quotes: { quote },
+}) => ({
+  quote,
+});
+
 // Render to the device
-export default Homepage;
+export default connect(mapStateToProps)(Homepage);
