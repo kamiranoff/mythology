@@ -7,3 +7,4 @@ export * from './MSearchInput/MSearchInput';
 export * from './MSpinner/MSpinner';
 export * from './MErrorMessage/MErrorMessage';
 export * from './MLabel/MLabel';
+export * from './MQuote/MQuote';
