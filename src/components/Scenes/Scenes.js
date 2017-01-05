@@ -3,6 +3,7 @@ import { Text } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 
 import Homepage from '../../Pages/Homepage';
+import GreekListpage from '../../Pages/GreekListpage';
 import SingleHeropage from '../../Pages/SingleHeropage/SingleHeropage';
 import BookListpage from '../../Pages/BookListpage';
 import SingleBookpage from '../../Pages/SingleBookpage/SingleBookpage';
@@ -19,21 +20,19 @@ const TabIcon = ({ selected, title }) => (
   <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
 );
 
-
 const Scenes = Actions.create(
   <Scene
     key="root"
-
   >
     <Scene
       key="tabbar"
       tabs
       tabBarStyle={styles.tabBarStyle}
-
     >
+      {/* Homepage */}
       <Scene
         key="home"
-        title="Pantheon"
+        title="Home"
         icon={TabIcon}
       >
         <Scene
@@ -43,25 +42,27 @@ const Scenes = Actions.create(
           initial
           renderRightButton={() => <UserIcon />}
         />
+      </Scene>
+      {/* GreekList page */}
+      <Scene
+        key="greeks"
+        title="Greek figures"
+        icon={TabIcon}
+      >
+        <Scene
+          key="greekListPage"
+          component={GreekListpage}
+          title="Gods"
+          initial
+          renderRightButton={() => <UserIcon />}
+        />
         <Scene
           key="singleHeroPage"
           component={SingleHeropage}
           renderRightButton={() => <UserIcon />}
         />
       </Scene>
-      <Scene
-        key="gods"
-        title="Gods"
-        icon={TabIcon}
-      >
-        <Scene
-          key="godsPage"
-          component={Homepage}
-          title="Gods"
-          initial
-          renderRightButton={() => <UserIcon />}
-        />
-      </Scene>
+      {/* Books page */}
       <Scene
         key="books"
         title="Books"
