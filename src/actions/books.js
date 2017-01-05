@@ -33,11 +33,12 @@ export function fetchBooks(filter) {
   return (dispatch) => {
     dispatch(requestBooks());
     return callApi(endPoint)
-      .then((books) => {
-        dispatch(receiveBooks(books));
-      }).catch((e) => {
-        console.log(e);
-        dispatch(receiveBooksFailed(e));
+      .then((response) => {
+        if (response.error) {
+          dispatch(receiveBooksFailed(response.error));
+        } else {
+          dispatch(receiveBooks(response));
+        }
       });
   };
 }

@@ -34,11 +34,12 @@ export function fetchAllGreeks(filter) {
   return (dispatch) => {
     dispatch(requestAllGreeks());
     return callApi(endPoint)
-      .then((greeks) => {
-        dispatch(receiveAllGreeks(greeks));
-      }).catch((e) => {
-        console.log(e);
-        dispatch(receiveAllGreeksFailed(e));
+      .then((response) => {
+        if (response.error) {
+          dispatch(receiveAllGreeksFailed(response.error));
+        } else {
+          dispatch(receiveAllGreeks(response));
+        }
       });
   };
 }
