@@ -8,6 +8,8 @@
 	<array>
 		<string>achv2.ttf</string>
 		<string>achv2i.ttf</string>
+		<string>Refuge.otf</string>
+		<string>Aquifer.otf</string>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
