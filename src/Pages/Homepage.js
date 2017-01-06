@@ -1,28 +1,29 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { MBackground, MQuote } from '../commonComponents';
 
-const Homepage = ({ quote }) => (
+import { MBackground } from '../commonComponents';
+import Quotes from '../components/Quotes/Quotes';
+
+import { fetchRandomQuote } from '../actions/quotes';
+
+const Homepage = ({ quotes, fetchRandomQuoteProp }) => (
   <MBackground>
-    <MQuote
-      quote={quote.quote}
-      author={quote.author}
-      note={quote.note}
-      book={quote.book}
+    <Quotes
+    quotes={quotes}
     />
   </MBackground>
 );
 
 Homepage.propTypes = {
-  quote: PropTypes.object.isRequired,
-
+  quotes: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = ({
-  quotes: { quote },
+  quotes: { quotes },
 }) => ({
-  quote,
+  quotes,
 });
 
 // Render to the device
-export default connect(mapStateToProps)(Homepage);
+export default connect(mapStateToProps,
+  { fetchRandomQuoteProp: fetchRandomQuote })(Homepage);

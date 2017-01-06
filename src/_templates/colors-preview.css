@@ -1,3 +1,4 @@
+// Allows to see color in IDE.
 .COLOR_1{  color :#f6e9c7;  }
 .COLOR_2{ color: #234  }
 .COLOR_3{  color :#444;  }
@@ -16,7 +17,9 @@
 .COLOR_16{color: #608341; }
 .COLOR_17{color: #ffc05c; }
 .COLOR_18{color: #e13636;}
-.COLOR_19{color: #441e57};
-.COLOR_20{color: #2a571e};
-.COLOR_21{color: #8393ca};
-.COLOR_22{  color :#777;  }
+.COLOR_19{color: #441e57}
+.COLOR_20{color: #2a571e}
+.COLOR_21{color: #8393ca}
+.COLOR_22{  color :#777;}
+.COLOR_23{ color: #e5c395;}
+.COLOR_24 { color: #dbba8f ;}

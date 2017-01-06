@@ -1,4 +1,3 @@
-// @TODO NEEDS CLEAN UP
 import {
   StyleSheet,
 } from 'react-native';
@@ -13,5 +12,6 @@ export default StyleSheet.create({
     flex: 1,
     color: TEXT_2,
     alignItems: 'center',
+    fontFamily: 'Aquifer',
   },
 });

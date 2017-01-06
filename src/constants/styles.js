@@ -20,17 +20,23 @@ const COLOR_19 = '#441e57';
 const COLOR_20 = '#2a571e';
 const COLOR_21 = '#8393ca';
 const COLOR_22 = '#777';
+const COLOR_23 = '#e5c395';
+const COLOR_24 = '#dbba8f';
 // TEXT
 export const TEXT_1 = COLOR_1;
 export const TEXT_2 = COLOR_3;
 export const TEXT_3 = COLOR_4;
 export const TEXT_4 = COLOR_2;
 export const TEXT_5 = COLOR_22;
-export const TEXT_SELECTED_1 = COLOR_4;
+export const LINK_1 = COLOR_23;
+export const TEXT_SELECTED_1 = COLOR_24;
 
 export const BACKGROUND_1 = COLOR_5;
 export const BACKGROUND_2 = COLOR_8;
 export const BACKGROUND_3 = COLOR_4;
+export const BACKGROUND_4 = COLOR_23;
+export const BACKGROUND_5 = COLOR_24;
+
 export const BORDER = COLOR_5;
 export const SHADOW_1 = COLOR_9;
 

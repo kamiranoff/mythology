@@ -4,6 +4,7 @@ const envs = {
     API: {
       GREEKS: 'all',
       BOOKS: 'books',
+      QUOTES: 'quotes',
       RANDOM_QUOTE: 'quotes/random',
     },
     firebaseConf: {

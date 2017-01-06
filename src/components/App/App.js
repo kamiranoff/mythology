@@ -10,7 +10,7 @@ import Scenes from '../Scenes/Scenes';
 import { setLoginStatus } from '../../actions/user';
 import { fetchAllGreeks } from '../../actions/figures';
 import { fetchBooks } from '../../actions/books';
-import { fetchRandomQuote } from '../../actions/quotes';
+import { fetchQuotes } from '../../actions/quotes';
 
 const RouterWithRedux = connect()(Router);
 const ENV = getEnvironment();
@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.props.fetchRandomQuote();
+    this.props.fetchQuotes();
     this.props.fetchAllGreeks();
     this.props.fetchBooks();
   }
@@ -50,7 +50,7 @@ class App extends Component {
 App.propTypes = {
   setLoginStatus: PropTypes.func.isRequired,
   fetchAllGreeks: PropTypes.func.isRequired,
-  fetchRandomQuote: PropTypes.func.isRequired,
+  fetchQuotes: PropTypes.func.isRequired,
   fetchBooks: PropTypes.func.isRequired,
   user: PropTypes.shape(),
 };
@@ -66,5 +66,5 @@ export default connect(mapStateToProps,
     setLoginStatus,
     fetchAllGreeks,
     fetchBooks,
-    fetchRandomQuote,
+    fetchQuotes,
   })(App);

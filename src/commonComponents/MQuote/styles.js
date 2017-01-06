@@ -1,4 +1,5 @@
 // @TODO NEEDS CLEAN UP
+import Dimensions from 'Dimensions';
 import {
   StyleSheet,
 } from 'react-native';
@@ -9,22 +10,38 @@ import {
 
 export default StyleSheet.create({
   quoteContainer: {
-    borderRadius: 6,
+    flex: 1,
   },
   quoteText: {
-    fontSize: 24,
     color: TEXT_2,
     paddingHorizontal: 10,
     paddingVertical: 5,
     backgroundColor: 'transparent',
-    margin: 15,
+    fontFamily: 'Aquifer',
+    fontSize: 40,
+    lineHeight: 40,
+    padding: 15,
+    height: Dimensions.get('window').height - 300,
+
   },
   quoteAuthor: {
-    fontSize: 12,
+    fontSize: 20,
     fontStyle: 'italic',
     color: TEXT_2,
-    fontFamily: 'Achilles',
-    margin: 15,
+    fontFamily: 'Refuge',
+    margin: 10,
     textAlign: 'right',
+
+  },
+  leftQuote: {
+    margin: 15,
+    width: 22,
+    height: 22,
+  },
+  rightQuote: {
+    margin: 15,
+    alignSelf: 'flex-end',
+    width: 22,
+    height: 22,
   },
 });

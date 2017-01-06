@@ -3,6 +3,9 @@ import {
   REQUEST_RANDOM_QUOTE,
   RECEIVE_RANDOM_QUOTE,
   RECEIVE_RANDOM_QUOTE_FAILURE,
+  REQUEST_QUOTES,
+  RECEIVE_QUOTES,
+  RECEIVE_QUOTES_FAILURE
 } from '../constants/actions';
 import getEnvironment from '../constants/environment';
 
@@ -22,6 +25,20 @@ const receiveRandomQuoteFailed = e => ({
   error: e,
 });
 
+const requestQuotes = () => ({
+  type: REQUEST_QUOTES,
+});
+
+const receiveQuotes = quotes => ({
+  type: RECEIVE_QUOTES,
+  quotes,
+});
+
+const receiveQuotesFailed = e => ({
+  type: RECEIVE_QUOTES_FAILURE,
+  error: e,
+});
+
 // eslint-disable-next-line import/prefer-default-export
 export function fetchRandomQuote() {
   const endPoint = ENV.API.RANDOM_QUOTE;
@@ -34,6 +51,22 @@ export function fetchRandomQuote() {
           dispatch(receiveRandomQuoteFailed(response.error));
         } else {
           dispatch(receiveRandomQuote(response));
+        }
+      });
+  };
+}
+
+// eslint-disable-next-line import/prefer-default-export
+export function fetchQuotes() {
+  let endPoint = ENV.API.QUOTES;
+  return (dispatch) => {
+    dispatch(requestQuotes());
+    return callApi(endPoint)
+      .then((response) => {
+        if (response.error) {
+          dispatch(receiveQuotesFailed(response.error));
+        } else {
+          dispatch(receiveQuotes(response));
         }
       });
   };
