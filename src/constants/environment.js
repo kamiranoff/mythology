@@ -2,7 +2,7 @@ const envs = {
   dev: {
     BASE_URL_WS: 'http://localhost:3333/api/',
     API: {
-      GREEKS: 'all',
+      GREEKS: 'figures',
       BOOKS: 'books',
       QUOTES: 'quotes',
       RANDOM_QUOTE: 'quotes/random',
