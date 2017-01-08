@@ -22,6 +22,7 @@ const COLOR_21 = '#8393ca';
 const COLOR_22 = '#777';
 const COLOR_23 = '#e5c395';
 const COLOR_24 = '#dbba8f';
+
 // TEXT
 export const TEXT_1 = COLOR_1;
 export const TEXT_2 = COLOR_3;
@@ -72,3 +73,8 @@ export const FONT_SIZE_L = 18;
 export const FONT_SIZE_XL = 20;
 export const FONT_SIZE_XXL = 24;
 export const FONT_SIZE_XXXL = 30;
+
+
+// SIZING
+export const NAVBAR_HEIGHT = 64;
+export const TABBAR_HEIGHT = 50;

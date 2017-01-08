@@ -14,13 +14,12 @@ export default StyleSheet.create({
   },
   quoteText: {
     color: TEXT_2,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 15,
     backgroundColor: 'transparent',
     fontFamily: 'Aquifer',
-    fontSize: 40,
-    lineHeight: 40,
-    padding: 15,
+    fontSize: 30,
+    paddingHorizontal: 40,
+    flexWrap: 'nowrap',
     height: Dimensions.get('window').height - 300,
 
   },

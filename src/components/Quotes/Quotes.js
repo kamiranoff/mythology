@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 import Swiper from 'react-native-swiper';
 
-import { MQuote } from '../../commonComponents';
+import { MQuote, MArrow } from '../../commonComponents';
+import { NAVBAR_HEIGHT } from '../../constants/styles';
 import styles from './styles';
 
 const Quotes = ({ quotes }) => (
@@ -10,11 +11,19 @@ const Quotes = ({ quotes }) => (
   <Swiper
     showsButtons={true}
     loop={true}
+    buttonWrapperStyle={{marginTop: -NAVBAR_HEIGHT }}
+    prevButton={
+    <MArrow
+      overrideStyleArrow={{transform:[{rotateY: '180deg'}]}}
+      />
+    }
+    nextButton={<MArrow />}
   >
     {quotes.map((quote,i) => (
       <View key={i} style={styles.quotesContainer}>
         <MQuote
           quote={quote}
+
         />
       </View>
     ))}

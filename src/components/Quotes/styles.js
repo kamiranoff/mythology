@@ -5,5 +5,6 @@ import {
 export default StyleSheet.create({
   quotesContainer: {
     flex: 1,
+    paddingHorizontal: 20,
   }
 });

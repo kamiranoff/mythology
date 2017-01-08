@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import { MBackground } from '../commonComponents';
 import Quotes from '../components/Quotes/Quotes';
 
-import { fetchRandomQuote } from '../actions/quotes';
 
-const Homepage = ({ quotes, fetchRandomQuoteProp }) => (
-  <MBackground>
+const Homepage = ({ quotes }) => (
+  <MBackground
+  >
     <Quotes
-    quotes={quotes}
+      quotes={quotes}
     />
   </MBackground>
 );
@@ -25,5 +25,4 @@ const mapStateToProps = ({
 });
 
 // Render to the device
-export default connect(mapStateToProps,
-  { fetchRandomQuoteProp: fetchRandomQuote })(Homepage);
+export default connect(mapStateToProps)(Homepage);

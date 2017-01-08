@@ -3,11 +3,11 @@ import { Image, View, ScrollView } from 'react-native';
 
 import styles from './styles';
 
-const MBackground = ({ children, scrollView }) => {
+const MBackground = ({ children, scrollView, backgroundOverrideStyle }) => {
   let view = null;
   if (scrollView) {
     view = (
-      <View style={styles.mainContainer}>
+      <View style={[styles.mainContainer, backgroundOverrideStyle]}>
         <ScrollView>
           <Image style={styles.bg}>
             {children}
@@ -25,6 +25,8 @@ const MBackground = ({ children, scrollView }) => {
 };
 MBackground.propTypes = {
   children: PropTypes.node.isRequired,
+  scrollView: PropTypes.bool,
+  backgroundOverrideStyle: PropTypes.object,
 };
 
 export { MBackground };
