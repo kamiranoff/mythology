@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.props.fetchQuotes();
+    this.props.fetchQuotes('random', true);
     this.props.fetchAllGreeks();
     this.props.fetchBooks();
   }

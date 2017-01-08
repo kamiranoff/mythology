@@ -57,8 +57,11 @@ export function fetchRandomQuote() {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchQuotes() {
+export function fetchQuotes(option, value) {
   let endPoint = ENV.API.QUOTES;
+  if (option === 'random') {
+    endPoint = `${endPoint}?random=${value}`;
+  }
   return (dispatch) => {
     dispatch(requestQuotes());
     return callApi(endPoint)
