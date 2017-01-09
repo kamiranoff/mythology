@@ -12,7 +12,6 @@ import { fetchAllGreeks } from '../../actions/figures';
 import { fetchBooks } from '../../actions/books';
 import { fetchQuotes } from '../../actions/quotes';
 
-const RouterWithRedux = connect()(Router);
 const ENV = getEnvironment();
 
 class App extends Component {
@@ -39,8 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <RouterWithRedux
-        isLoggedIn={this.props.user.isLoggedIn}
+      <Router
         scenes={Scenes}
       />
     );
