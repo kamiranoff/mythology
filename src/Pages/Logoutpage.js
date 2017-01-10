@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Actions } from 'react-native-router-flux';
+import { Actions, ActionConst } from 'react-native-router-flux';
 import firebase from 'firebase';
 
 import { MBackground, MButton, MErrorMessage } from '../commonComponents';
@@ -18,7 +18,7 @@ class Logoutpage extends Component {
   logout() {
     firebase.auth().signOut()
       .then(() => {
-        Actions.pop();
+        Actions.login({type: ActionConst.REPLACE});
       })
       .catch((e) => {
         this.setState({ errorMsg: e.message });
