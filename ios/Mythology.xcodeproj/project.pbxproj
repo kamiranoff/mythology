@@ -16,6 +16,7 @@
 		0A0B834C1E1DA820004C8811 /* ach.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B83491E1DA820004C8811 /* ach.txt */; };
 		0A0B834D1E1DA820004C8811 /* achv2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B834A1E1DA820004C8811 /* achv2.ttf */; };
 		0A0B834E1E1DA820004C8811 /* achv2i.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B834B1E1DA820004C8811 /* achv2i.ttf */; };
+		0A58286F1E244790009FD914 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A58286E1E244790009FD914 /* FontAwesome.ttf */; };
 		0AE1E6621E1EEEEE005FAF96 /* Refuge.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AE1E6611E1EEEEE005FAF96 /* Refuge.otf */; };
 		0AE1E6641E1F0106005FAF96 /* Aquifer.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AE1E6631E1F0106005FAF96 /* Aquifer.otf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
@@ -237,6 +238,7 @@
 		0A0B83491E1DA820004C8811 /* ach.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ach.txt; sourceTree = "<group>"; };
 		0A0B834A1E1DA820004C8811 /* achv2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = achv2.ttf; sourceTree = "<group>"; };
 		0A0B834B1E1DA820004C8811 /* achv2i.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = achv2i.ttf; sourceTree = "<group>"; };
+		0A58286E1E244790009FD914 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		0AE1E6611E1EEEEE005FAF96 /* Refuge.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Refuge.otf; sourceTree = "<group>"; };
 		0AE1E6631E1F0106005FAF96 /* Aquifer.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aquifer.otf; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		0A0B83341E1DA7DC004C8811 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				0A58286E1E244790009FD914 /* FontAwesome.ttf */,
 				0AE1E6631E1F0106005FAF96 /* Aquifer.otf */,
 				0AE1E6611E1EEEEE005FAF96 /* Refuge.otf */,
 				0A0B83481E1DA820004C8811 /* achilles */,
@@ -815,6 +818,7 @@
 				0A0B834C1E1DA820004C8811 /* ach.txt in Resources */,
 				0A0B834D1E1DA820004C8811 /* achv2.ttf in Resources */,
 				0AE1E6641E1F0106005FAF96 /* Aquifer.otf in Resources */,
+				0A58286F1E244790009FD914 /* FontAwesome.ttf in Resources */,
 				0A0B834E1E1DA820004C8811 /* achv2i.ttf in Resources */,
 				0AE1E6621E1EEEEE005FAF96 /* Refuge.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,

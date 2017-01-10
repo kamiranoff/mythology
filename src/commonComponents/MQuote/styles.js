@@ -20,7 +20,7 @@ export default StyleSheet.create({
     fontSize: 30,
     paddingHorizontal: 40,
     flexWrap: 'nowrap',
-    height: Dimensions.get('window').height - 300,
+    height: Dimensions.get('window').height / 2,
 
   },
   quoteAuthor: {

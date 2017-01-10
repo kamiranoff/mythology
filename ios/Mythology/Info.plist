@@ -10,6 +10,7 @@
 		<string>achv2i.ttf</string>
 		<string>Refuge.otf</string>
 		<string>Aquifer.otf</string>
+		<string>FontAwesome.ttf</string>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>

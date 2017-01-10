@@ -9,3 +9,4 @@ export * from './MErrorMessage/MErrorMessage';
 export * from './MLabel/MLabel';
 export * from './MQuote/MQuote';
 export * from './MArrow/MArrow';
+export * from './MCounter/MCounter';

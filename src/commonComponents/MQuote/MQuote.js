@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
 import Helpers from '../../util/Helpers';
-
+import MCounter from '../MCounter/MCounter';
 import styles from './styles';
 
 const leftQuoteMark = require('./../../assets/images/quote/left-quote.png');
@@ -15,6 +15,7 @@ const MQuote = ({ quote }) => (
     <Text
       style={styles.quoteAuthor}
     >
+
       {quote.author}
     </Text>
     <Image
@@ -33,10 +34,11 @@ const MQuote = ({ quote }) => (
       source={rightQuoteMark}
       style={styles.rightQuote}
     />
+
     <Text
       style={styles.quoteAuthor}
     >
-      {quote.book} - {quote.note}
+      <MCounter />  - {quote.book} - {quote.note}
     </Text>
   </View>
 );
