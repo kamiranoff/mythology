@@ -2,12 +2,12 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { TEXT_3, BORDER, FONT_SIZE_L, FONT_SIZE_XL } from '../../constants/styles';
+import { TEXT_4, BORDER, FONT_SIZE_L, FONT_SIZE_XL } from '../../constants/styles';
 
 export default StyleSheet.create({
   container: {
     height: 80,
-    marginHorizontal: 10,
+    marginHorizontal: 60,
     marginVertical: 20,
   },
   labelContainer: {
@@ -18,10 +18,10 @@ export default StyleSheet.create({
     fontSize: FONT_SIZE_XL,
     alignSelf: 'flex-start',
     backgroundColor: 'transparent',
-    color: TEXT_3,
+    color: TEXT_4,
   },
   textInput: {
-    color: TEXT_3,
+    color: TEXT_4,
     fontSize: FONT_SIZE_L,
     height: 40,
 

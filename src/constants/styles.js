@@ -19,7 +19,7 @@ const COLOR_18 = '#e13636';
 const COLOR_19 = '#441e57';
 const COLOR_20 = '#2a571e';
 const COLOR_21 = '#8393ca';
-const COLOR_22 = '#777';
+const COLOR_22 = '#bbb';
 const COLOR_23 = '#e5c395';
 const COLOR_24 = '#dbba8f';
 
@@ -39,6 +39,7 @@ export const BACKGROUND_4 = COLOR_23;
 export const BACKGROUND_5 = COLOR_24;
 
 export const BORDER = COLOR_5;
+export const BORDER_2 = COLOR_24;
 export const SHADOW_1 = COLOR_9;
 
 

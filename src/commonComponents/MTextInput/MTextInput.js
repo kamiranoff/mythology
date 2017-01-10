@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
-import { TEXT_3 } from '../../constants/styles';
+import { TEXT_5 } from '../../constants/styles';
 import styles from './styles';
 
 const MTextInput = ({
@@ -19,7 +19,7 @@ const MTextInput = ({
     <TextInput
       value={value}
       style={styles.textInput}
-      placeholderTextColor={TEXT_3}
+      placeholderTextColor={TEXT_5}
       onChangeText={onChangeText}
       placeholder={placeholder}
       secureTextEntry={secureTextEntry}
