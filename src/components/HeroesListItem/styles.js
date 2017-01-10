@@ -9,6 +9,7 @@ import {
 export default StyleSheet.create({
   listElementTitle: {
     fontSize: 16,
+    lineHeight: 18,
     flex: 1,
     color: TEXT_2,
     alignItems: 'center',
