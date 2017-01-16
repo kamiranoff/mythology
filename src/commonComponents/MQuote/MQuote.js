@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
 import Helpers from '../../util/Helpers';
-import MCounter from '../MCounter/MCounter';
+import { MCounter } from '../index';
 import styles from './styles';
 
 const leftQuoteMark = require('./../../assets/images/quote/left-quote.png');
 const rightQuoteMark = require('./../../assets/images/quote/right-quote.png');
 
-const MQuote = ({ quote }) => (
+const MQuote = ({ quote, onLikeButtonPressed, liked }) => (
   <View
     style={styles.quoteContainer}
   >
@@ -38,13 +38,19 @@ const MQuote = ({ quote }) => (
     <Text
       style={styles.quoteAuthor}
     >
-      <MCounter />  - {quote.book} - {quote.note}
+      <MCounter
+        likes={quote.likes}
+        onPressed={() => onLikeButtonPressed(liked)}
+        liked={liked}
+      />  - {quote.book} - {quote.note}
     </Text>
   </View>
 );
 
 MQuote.propTypes = {
   quote: PropTypes.object.isRequired,
+  onLikeButtonPressed: PropTypes.func.isRequired,
+  liked: PropTypes.bool.isRequired,
 };
 
 export { MQuote };

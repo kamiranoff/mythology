@@ -3,29 +3,40 @@ import { connect } from 'react-redux';
 import { TouchableOpacity, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const MCounter = () => (
+const MCounter = ({ onPressed, liked, likes = 0 }) => (
   <View
-    style={{ width: 40, height: 20, flex: 1, flexDirection: 'row' }}
+    style={{ width: 55, height: 20, flex: 1, flexDirection: 'row' }}
   >
     <Text
-      style={{ flex: 1 }}
+      style={{ width: 30, textAlign: 'right', marginRight:5 }}
     >
-      0
+      {likes}
     </Text>
 
-    <TouchableOpacity
-      onPress={() => console.log('pressed')}
-      style={{ flex: 1 }}
-    >
-      <Icon name="thumbs-o-up" size={20} />
-    </TouchableOpacity>
+    {liked ?
+      <TouchableOpacity
+        onPress={() => onPressed(!liked)}
+        style={{ flex: 1 }}
+      >
+        <Icon name="thumbs-up" size={20}/>
+      </TouchableOpacity> :
+      <TouchableOpacity
+        onPress={() => onPressed(liked)}
+        style={{ flex: 1 }}
+      >
+        <Icon name="thumbs-o-up" size={20}/>
+      </TouchableOpacity>
+
+    }
   </View>
 );
 
-MCounter.propTypes = {};
+MCounter.propTypes = {
+  onPressed: PropTypes.func.isRequired,
+  liked: PropTypes.bool.isRequired,
+  likes: PropTypes.number,
+};
 
-const mapStateToProps = ({}) => ({});
-
-export default connect(mapStateToProps, null)(MCounter);
+export { MCounter };
 
 

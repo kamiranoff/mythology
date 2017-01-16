@@ -4,6 +4,7 @@ import {
 
 const initialState = {
   isLoggedIn: null,
+  liked: false,
 };
 
 export default function reducer(state = initialState, action) {

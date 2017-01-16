@@ -6,7 +6,11 @@ import { MQuote, MArrow } from '../../commonComponents';
 import { NAVBAR_HEIGHT } from '../../constants/styles';
 import styles from './styles';
 
-const Quotes = ({ quotes }) => (
+const likeButtonPressed = (value) => {
+  console.log('val', value);
+};
+
+const Quotes = ({ quotes, liked = false }) => (
   <View>
   <Swiper
     showsButtons={true}
@@ -23,7 +27,8 @@ const Quotes = ({ quotes }) => (
       <View key={i} style={styles.quotesContainer}>
         <MQuote
           quote={quote}
-
+          liked={liked}
+          onLikeButtonPressed={() => likeButtonPressed(liked)}
         />
       </View>
     ))}
@@ -33,6 +38,7 @@ const Quotes = ({ quotes }) => (
 
 Quotes.propTypes = {
   quotes: PropTypes.array.isRequired,
+  liked: PropTypes.bool.isRequired,
 };
 
 // Render to the device

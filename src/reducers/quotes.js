@@ -13,12 +13,15 @@ const initialState = {
     note: 'First lines, Book 1.',
     book: 'The Iliad',
     author: 'Homer',
+    likes: 100,
   }],
   quote: {
     quote: 'Loading...',
     note: 'First lines, Book 1.',
     book: 'The Iliad',
     author: 'Homer',
+    likes: 100,
+
   },
   loading: true,
   error: '',
