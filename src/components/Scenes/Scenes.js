@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Text } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 
 import Homepage from '../../Pages/Homepage';
@@ -16,8 +16,26 @@ import { TEXT_2, TEXT_SELECTED_1 } from '../../constants/styles';
 
 import styles from './styles';
 
+const book = require('../../assets/images/book/book.png');
+
 const TabIcon = ({ selected, title }) => (
-  <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
+  <View
+    style={{
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding:5
+    }}
+  >
+    <Image
+      style={{
+        flex: 1,
+        width:30,
+        resizeMode: 'contain'
+      }}
+      source={book}
+    />
+    <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
+  </View>
 );
 
 const Scenes = Actions.create(
@@ -32,13 +50,13 @@ const Scenes = Actions.create(
       {/* Homepage */}
       <Scene
         key="home"
-        title="Home"
+        title="Quotes"
         icon={TabIcon}
       >
         <Scene
           key="homepage"
           component={Homepage}
-          title="Pantheon"
+          title="Quotes"
           initial
           renderRightButton={() => <UserIcon />}
         />
@@ -46,13 +64,13 @@ const Scenes = Actions.create(
       {/* GreekList page */}
       <Scene
         key="greeks"
-        title="Greek figures"
+        title="Pantheon"
         icon={TabIcon}
       >
         <Scene
           key="greekListPage"
           component={GreekListpage}
-          title="Gods"
+          title="Pantheon"
           initial
           renderRightButton={() => <UserIcon />}
         />
