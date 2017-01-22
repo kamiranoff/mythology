@@ -6,6 +6,8 @@ const envs = {
       BOOKS: 'books',
       QUOTES: 'quotes',
       RANDOM_QUOTE: 'quotes/random',
+      USER_LOGIN: 'users/signin',
+      USER_SIGN_UP: 'users/signup'
     },
     firebaseConf: {
       apiKey: 'AIzaSyApW4lHNF64NJ4FNwvwvc-lIhyrzG9E09s',

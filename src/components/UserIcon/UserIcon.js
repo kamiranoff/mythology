@@ -8,35 +8,29 @@ import styles from './styles';
 const profile = require('../../assets/images/helmet/helmet.png');
 const profilebw = require('../../assets/images/helmetbw/helmetbw.png');
 
-const goToLogin = (isLoggedIn) => {
-  // if firebase has not responded return.
-  if (isLoggedIn === null) {
-    return;
-  }
+const goToLogin = (isAuthenticated) => {
 
-  if (isLoggedIn === false) {
-    Actions.login({ type: 'push' });
-  }
-
-  if (isLoggedIn) {
+  if (isAuthenticated) {
     Actions.logout({ type: 'push' });
+  } else {
+    Actions.login({ type: 'push' });
   }
 };
 
-const renderProfileImage = (isLoggedIn) => {
-  if (isLoggedIn) {
+const renderProfileImage = (isAuthenticated) => {
+  if (isAuthenticated) {
     return profile;
   }
   return profilebw;
 };
 
-const UserIcon = ({ isLoggedIn }) => (
+const UserIcon = ({ isAuthenticated }) => (
   <TouchableOpacity
-    onPress={() => goToLogin(isLoggedIn)}
+    onPress={() => goToLogin(isAuthenticated)}
   >
     <Image
       style={styles.image}
-      source={renderProfileImage(isLoggedIn)}
+      source={renderProfileImage(isAuthenticated)}
     />
   </TouchableOpacity>
 
@@ -47,9 +41,9 @@ UserIcon.propTypes = {
 };
 
 const mapStateToProps = ({
-  user: { isLoggedIn },
+  user: { isAuthenticated },
 }) => ({
-  isLoggedIn,
+  isAuthenticated,
 });
 
 export default connect(mapStateToProps, null)(UserIcon);

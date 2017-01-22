@@ -1,5 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+  View
+} from 'react-native';
 
 import { MButton, MTextInput, MSpinner, MErrorMessage } from '../../commonComponents';
 
@@ -8,7 +13,7 @@ class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      email: 'aphrodite@mythology.com',
       password: '',
     };
   }
@@ -22,47 +27,54 @@ class LoginForm extends Component {
       <MButton
         buttonText="Sign in"
         onPress={() => {
-          this.props.signIn(this.state.username, this.state.password);
+          this.props.signIn(this.state);
         }}
       />
     );
   }
 
   renderSignUpButton() {
-    if (this.props.createAccountOption) {
-      return (
-        <MButton
-          buttonText="Create an account"
-          onPress={() => {
-            this.props.createAccount(this.state.username, this.state.password);
-          }}
-        />
-      );
-    }
-    return null;
+    return (
+      <MButton
+        buttonText="Create an account"
+        onPress={() => {
+          this.props.createAccount(this.state);
+        }}
+      />
+    );
   }
 
   render() {
     return (
-      <View>
-        <MTextInput
-          value={this.state.username}
-          onChangeText={username => this.setState({ username })}
-          label={'Email'}
-          placeholder="aphrodite@gmail.com"
-        />
+      <KeyboardAvoidingView
+        behavior="position"
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+        }}
+      >
+        <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
+          <View>
+            <MTextInput
+              value={this.state.email}
+              onChangeText={email => this.setState({ email })}
+              label={'Email'}
+              placeholder="aphrodite@gmail.com"
+            />
 
-        <MTextInput
-          value={this.state.password}
-          onChangeText={password => this.setState({ password })}
-          label={'Password'}
-          placeholder="Password123"
-          secureTextEntry
-        />
-        <MErrorMessage errorMessage={this.props.errorMessage} />
-        {this.renderSignInButton()}
-        {this.renderSignUpButton()}
-      </View>
+            <MTextInput
+              value={this.state.password}
+              onChangeText={password => this.setState({ password })}
+              label={'Password'}
+              placeholder="Password123"
+              secureTextEntry
+            />
+            <MErrorMessage errorMessage={this.props.errorMessage} />
+            {this.renderSignInButton()}
+            {this.renderSignUpButton()}
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     );
   }
 }

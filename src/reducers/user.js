@@ -1,19 +1,39 @@
 import {
-  SET_LOGIN_STATUS,
+  REQUEST_LOGIN,
+  RECEIVE_LOGIN,
+  RECEIVE_LOGIN_FAILURE,
 } from '../constants/actions';
 
 const initialState = {
-  isLoggedIn: null,
+  isFetching: null,
   liked: false,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
 
-    case SET_LOGIN_STATUS:
+    case REQUEST_LOGIN:
       return {
         ...state,
-        isLoggedIn: action.loginStatus,
+        isFetching: true,
+        isAuthenticated: false,
+        user: action.credentials
+      };
+
+    case RECEIVE_LOGIN_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        isAuthenticated: false,
+        error: action.error
+      };
+
+    case RECEIVE_LOGIN:
+      return {
+        ...state,
+        isFetching: false,
+        isAuthenticated: true,
+        user: action.user
       };
 
     default:

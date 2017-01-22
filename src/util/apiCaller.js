@@ -1,9 +1,12 @@
 import getEnvironment from '../constants/environment';
 
 const ENV = getEnvironment();
-export default function callApi(endpoint, method = 'get', body) {
+export default function callApi(endpoint,
+                                method = 'get',
+                                headers = { 'content-type': 'application/json' },
+                                body) {
   return fetch(`${ENV.BASE_URL_WS}${endpoint}`, {
-    headers: { 'content-type': 'application/json' },
+    headers,
     method,
     body: JSON.stringify(body),
   })
