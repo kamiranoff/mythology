@@ -2,7 +2,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { TEXT_2, FONT_SIZE_L, BACKGROUND_1, BACKGROUND_3, BACKGROUND_4 } from '../../constants/styles';
+import { TEXT_2, FONT_SIZE_L, BACKGROUND_1, BACKGROUND_4 } from '../../constants/styles';
 
 export default StyleSheet.create({
   container: {

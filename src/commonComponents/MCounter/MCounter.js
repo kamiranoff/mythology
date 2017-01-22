@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { TouchableOpacity, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 

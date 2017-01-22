@@ -1,4 +1,5 @@
 import callApi from '../util/apiCaller';
+import getEnvironment from '../constants/environment';
 import {
   REQUEST_RANDOM_QUOTE,
   RECEIVE_RANDOM_QUOTE,
@@ -7,7 +8,6 @@ import {
   RECEIVE_QUOTES,
   RECEIVE_QUOTES_FAILURE
 } from '../constants/actions';
-import getEnvironment from '../constants/environment';
 
 const ENV = getEnvironment();
 
