@@ -2,7 +2,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { TEXT_2, FONT_SIZE_L, BACKGROUND_1, BACKGROUND_4 } from '../../constants/styles';
+import { TEXT_2, FONT_SIZE_L, BACKGROUND_1, BACKGROUND_2 } from '../../constants/styles';
 
 export default StyleSheet.create({
   container: {
@@ -10,12 +10,12 @@ export default StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 20,
     paddingVertical: 20,
-    backgroundColor: BACKGROUND_4,
+    backgroundColor: BACKGROUND_1,
     alignItems: 'center',
   },
   textInput: {
     flex: 9,
-    backgroundColor: BACKGROUND_1,
+    backgroundColor: BACKGROUND_2,
     color: TEXT_2,
     fontSize: FONT_SIZE_L,
     height: 40,
