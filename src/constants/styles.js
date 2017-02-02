@@ -41,7 +41,7 @@ export const BACKGROUND_5 = COLOR_24;
 export const BORDER = COLOR_5;
 export const BORDER_2 = COLOR_24;
 export const SHADOW_1 = COLOR_9;
-
+export const SHADOW_2 = COLOR_5;
 
 // ERRORS, WARNING, ALRIGHT
 export const ERROR_TEXT = COLOR_6;

@@ -1,5 +1,4 @@
-import React, { PropTypes } from 'react';
-import { View, Image, Text } from 'react-native';
+import React from 'react';
 import { Actions, Scene } from 'react-native-router-flux';
 
 import Homepage from '../../Pages/Homepage';
@@ -11,32 +10,9 @@ import Loginpage from '../../Pages/Loginpage';
 import Logoutpage from '../../Pages/Logoutpage';
 
 import UserIcon from '../UserIcon/UserIcon';
-
-import { TEXT_2, TEXT_SELECTED_1 } from '../../constants/styles';
+import TabIcon from '../TabIcon/TabIcon';
 
 import styles from './styles';
-
-const book = require('../../assets/images/book/book.png');
-
-const TabIcon = ({ selected, title }) => (
-  <View
-    style={{
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding:5
-    }}
-  >
-    <Image
-      style={{
-        flex: 1,
-        width:30,
-        resizeMode: 'contain'
-      }}
-      source={book}
-    />
-    <Text style={{ color: selected ? TEXT_SELECTED_1 : TEXT_2 }}>{title}</Text>
-  </View>
-);
 
 const Scenes = Actions.create(
   <Scene
@@ -46,12 +22,14 @@ const Scenes = Actions.create(
       key="tabbar"
       tabs
       tabBarStyle={styles.tabBarStyle}
+      tabBarIconContainerStyle={{height: null, padding: 10}}
     >
       {/* Homepage */}
       <Scene
         key="home"
         title="Quotes"
         icon={TabIcon}
+        navigationBarStyle={styles.navbarStyleWidthShadow}
       >
         <Scene
           key="homepage"
@@ -73,11 +51,13 @@ const Scenes = Actions.create(
           title="Pantheon"
           initial
           renderRightButton={() => <UserIcon />}
+          navigationBarStyle={styles.navbarStyle}
         />
         <Scene
           key="singleHeroPage"
           component={SingleHeropage}
           renderRightButton={() => <UserIcon />}
+          navigationBarStyle={[styles.navbarStyleWidthShadow, styles.extraShadow]}
         />
       </Scene>
       {/* Books page */}
@@ -85,6 +65,7 @@ const Scenes = Actions.create(
         key="books"
         title="Books"
         icon={TabIcon}
+        navigationBarStyle={styles.navbarStyle}
       >
         <Scene
           key="booksPage"
@@ -105,19 +86,16 @@ const Scenes = Actions.create(
       title="Login"
       component={Loginpage}
       renderRightButton={() => <UserIcon />}
+      navigationBarStyle={styles.navbarStyleWidthShadow}
     />
     <Scene
       key="logout"
       title="Logout"
       component={Logoutpage}
       renderRightButton={() => <UserIcon />}
+      navigationBarStyle={styles.navbarStyleWidthShadow}
     />
   </Scene>,
 );
-
-TabIcon.propTypes = {
-  selected: PropTypes.bool,
-  title: PropTypes.string.isRequired,
-};
 
 export default Scenes;
