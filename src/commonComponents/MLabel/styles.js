@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 
 import {
+  TEXT_1,
   TEXT_2,
   MINOR_FIGURE_BACKGROUND,
   TITAN_BACKGROUND,
@@ -13,7 +14,7 @@ import {
   SEA_DEITY_BACKGROUND,
   SKY_DEITY_BACKGROUND,
   PRIMORDIAL_DEITY_BACKGROUND,
-  TEXT_1,
+  CHTHONIC_DEITY_BACKGROUND,
   GOD_BACKGROUND,
   GIANT_BACKGOURND,
   NYMPH_BACKGROUND,
@@ -72,7 +73,7 @@ export default StyleSheet.create({
     color: TEXT_2,
   },
   chthonic_deity: {
-    backgroundColor: PRIMORDIAL_DEITY_BACKGROUND,
+    backgroundColor: CHTHONIC_DEITY_BACKGROUND,
   },
   rustic_deity: {
     backgroundColor: RUSTIC_DEITY_BACKGROUND,
@@ -80,10 +81,7 @@ export default StyleSheet.create({
   agricultural_deity: {
     backgroundColor: RUSTIC_DEITY_BACKGROUND,
   },
-  major_olympians: {
-    backgroundColor: GOD_BACKGROUND,
-  },
-  goddess: {
+  major_olympian: {
     backgroundColor: GOD_BACKGROUND,
   },
   giant: {
@@ -124,5 +122,8 @@ export default StyleSheet.create({
   },
   seer_oracle: {
     backgroundColor: SEER_ORACLE_BACKGROUND,
+  },
+  primordial_deity: {
+    backgroundColor: PRIMORDIAL_DEITY_BACKGROUND,
   },
 });
