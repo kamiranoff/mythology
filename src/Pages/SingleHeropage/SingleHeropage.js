@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { MBackground, MLabel } from '../../commonComponents';
+import HTMLView from 'react-native-htmlview';
 
 import styles from './styles';
 
@@ -53,12 +54,35 @@ const SingleHeropage = ({ hero }) => {
         <Text style={styles.greekName}>
           {greekName}{romanName ? ` - ${romanName}` : null }
         </Text>
-
-        <Text>{description}</Text>
+        <HTMLView
+          value={description}
+          stylesheet={htmlStyle}
+        />
       </View>
     </MBackground>
   );
 };
+
+const htmlStyle = StyleSheet.create({
+  h1: {
+    fontSize: 20,
+  },
+  h3: {
+    marginTop: 20,
+    paddingTop:20,
+    margin:20,
+    padding:20,
+    fontSize: 18,
+  },
+  div: {
+    lineHeight: 30,
+  },
+  blockquote: {
+    marginLeft: 10,
+    fontStyle: 'italic',
+  },
+});
+
 
 SingleHeropage.propTypes = {
   hero: PropTypes.object.isRequired,

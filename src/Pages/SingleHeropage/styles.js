@@ -27,4 +27,12 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 15,
   },
+
+});
+
+export const htmlStyle = StyleSheet.create({
+  p: {
+    fontSize: 54,
+    backgroundColor:'red',
+  }
 });
