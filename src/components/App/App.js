@@ -33,16 +33,9 @@ App.propTypes = {
   fetchAllGreeks: PropTypes.func.isRequired,
   fetchQuotes: PropTypes.func.isRequired,
   fetchBooks: PropTypes.func.isRequired,
-  user: PropTypes.shape(),
 };
 
-const mapStateToProps = ({
-  user,
-}) => ({
-  user,
-});
-
-export default connect(mapStateToProps,
+export default connect(null,
   {
     loginWithToken,
     fetchAllGreeks,

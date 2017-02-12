@@ -95,7 +95,7 @@ const Scenes = Actions.create(
       renderRightButton={() => <UserIcon />}
       navigationBarStyle={styles.navbarStyleWidthShadow}
     />
-  </Scene>,
+  </Scene>
 );
 
 export default Scenes;

@@ -68,12 +68,12 @@ const htmlStyle = StyleSheet.create({
     fontSize: 20,
   },
   h3: {
-    marginTop: 20,
-    paddingTop: 20,
-    margin: 20,
-    padding: 20,
-    top:10,
     fontSize: 18,
+    fontWeight: 'bold',
+  },
+  p: {
+    margin: 0,
+    padding: 0,
   },
   div: {
     lineHeight: 30,
