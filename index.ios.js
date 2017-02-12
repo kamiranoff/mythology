@@ -8,12 +8,6 @@ import configureStore from './src/store/configureStore';
 
 const store = configureStore();
 
-// Enable Chrome Network debugging
-// const _XHR = GLOBAL.originalXMLHttpRequest ?
-//   GLOBAL.originalXMLHttpRequest :
-//   GLOBAL.XMLHttpRequest;
-// XMLHttpRequest = _XHR;
-
 const Root = () => (
   <Provider store={store}>
     <App />
