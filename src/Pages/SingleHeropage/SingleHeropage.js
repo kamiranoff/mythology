@@ -69,9 +69,10 @@ const htmlStyle = StyleSheet.create({
   },
   h3: {
     marginTop: 20,
-    paddingTop:20,
-    margin:20,
-    padding:20,
+    paddingTop: 20,
+    margin: 20,
+    padding: 20,
+    top:10,
     fontSize: 18,
   },
   div: {
