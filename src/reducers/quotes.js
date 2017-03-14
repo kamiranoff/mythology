@@ -5,6 +5,9 @@ import {
   REQUEST_QUOTES,
   RECEIVE_QUOTES,
   RECEIVE_QUOTES_FAILURE,
+  REQUEST_UPADATE_QUOTES_LIKES,
+  UPDATE_QUOTE_LIKES_FAILURE,
+  UPDATE_QUOTE_LIKES
 } from '../constants/actions';
 
 const initialState = {
@@ -65,6 +68,25 @@ export default (state = initialState, action) => {
         ...state,
         error: action.error,
       };
+
+
+    case REQUEST_UPADATE_QUOTES_LIKES:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case UPDATE_QUOTE_LIKES_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+      };
+    case UPDATE_QUOTE_LIKES: {
+      return {
+        ...state,
+        quote: action.quote,
+      };
+    }
 
     default:
       return state;

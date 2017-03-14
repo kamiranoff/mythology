@@ -6,7 +6,11 @@ import {
   RECEIVE_RANDOM_QUOTE_FAILURE,
   REQUEST_QUOTES,
   RECEIVE_QUOTES,
-  RECEIVE_QUOTES_FAILURE
+  RECEIVE_QUOTES_FAILURE,
+  REQUEST_UPADATE_QUOTES_LIKES,
+  UPDATE_QUOTE_LIKES_FAILURE,
+  UPDATE_QUOTE_LIKES,
+
 } from '../constants/actions';
 
 const ENV = getEnvironment();
@@ -39,6 +43,21 @@ const receiveQuotesFailed = e => ({
   error: e,
 });
 
+const updateLikesFailure = e => ({
+  type: UPDATE_QUOTE_LIKES_FAILURE,
+  error: e,
+});
+
+const requestUpdateLikes = () => ({
+  type: REQUEST_UPADATE_QUOTES_LIKES,
+});
+
+const receiveUpdateLikes = quote => ({
+  type: UPDATE_QUOTE_LIKES,
+  quote
+});
+
+
 // eslint-disable-next-line import/prefer-default-export
 export function fetchRandomQuote() {
   const endPoint = ENV.API.RANDOM_QUOTE;
@@ -51,6 +70,23 @@ export function fetchRandomQuote() {
           dispatch(receiveRandomQuoteFailed(response.error));
         } else {
           dispatch(receiveRandomQuote(response));
+        }
+      });
+  };
+}
+
+export function updateLikes(quoteId, likes) {
+  const endpoint = `${ENV.API.QUOTES}/${quoteId}`;
+
+
+  return (dispatch) => {
+    dispatch(requestUpdateLikes());
+    return callApi(endpoint, 'PATCH', undefined, {likes})
+      .then((response) => {
+        if (response.error) {
+          dispatch(updateLikesFailure(response.error));
+        } else {
+          dispatch(receiveUpdateLikes(response));
         }
       });
   };

@@ -40,7 +40,7 @@ const MQuote = ({ quote, onLikeButtonPressed, liked }) => (
     >
       <MCounter
         likes={quote.likes}
-        onPressed={() => onLikeButtonPressed(liked)}
+        onPressed={() => onLikeButtonPressed(!liked)}
         liked={liked}
       />  - {quote.book} - {quote.note}
     </Text>
