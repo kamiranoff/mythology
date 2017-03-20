@@ -15,7 +15,7 @@ class MQuote extends Component {
 
     this.state = {
       quoteLikes: props.quote.likes
-    }
+    };
   }
 
   _onLikeButtonPressed(liked, likes) {
@@ -27,7 +27,7 @@ class MQuote extends Component {
     }
 
     this.setState({ quoteLikes });
-    this.props.onLikeButtonPressed(!liked)
+    this.props.onLikeButtonPressed(!liked);
   }
 
   componentWillReceiveProps(nextProps) {

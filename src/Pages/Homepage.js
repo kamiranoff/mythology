@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import { MBackground } from '../commonComponents';
 import Quotes from '../components/Quotes/Quotes';

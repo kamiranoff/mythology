@@ -12,41 +12,43 @@ import { NAVBAR_HEIGHT } from '../../constants/styles';
 import styles from './styles';
 
 const likeButtonPressed = (_updateLikes, id, likes, liked) => {
-  console.log('likeButtonPressed', likes, liked);
   let updatedLikes = likes;
   if (liked) {
     updatedLikes = likes - 1;
   } else {
     updatedLikes = likes + 1;
   }
-  _updateLikes(id, updatedLikes)
+
+  _updateLikes(id, updatedLikes);
 };
 
-const Quotes = ({ quotes, liked = false, _updateLikes }) => (
-  <View>
-    <Swiper
-      showsButtons={true}
-      loop={true}
-      buttonWrapperStyle={{ marginTop: -NAVBAR_HEIGHT }}
-      prevButton={
-        <MArrow
-          overrideStyleArrow={{ transform: [{ rotateY: '180deg' }] }}
-        />
-      }
-      nextButton={<MArrow />}
-    >
-      {quotes.map((quote, i) => (
-        <View key={i} style={styles.quotesContainer}>
-          <MQuote
-            quote={quote}
-            liked={liked}
-            onLikeButtonPressed={() => likeButtonPressed(_updateLikes, quote._id, quote.likes, quote.liked)}
+const Quotes = ({ quotes, liked = false, _updateLikes }) => {
+  return (
+    <View>
+      <Swiper
+        showsButtons={true}
+        loop={true}
+        buttonWrapperStyle={{ marginTop: -NAVBAR_HEIGHT }}
+        prevButton={
+          <MArrow
+            overrideStyleArrow={{ transform: [{ rotateY: '180deg' }] }}
           />
-        </View>
-      ))}
-    </Swiper>
-  </View>
-);
+        }
+        nextButton={<MArrow />}
+      >
+        {quotes.map((quote, i) => (
+          <View key={i} style={styles.quotesContainer}>
+            <MQuote
+              quote={quote}
+              liked={liked}
+              onLikeButtonPressed={() => likeButtonPressed(_updateLikes, quote._id, quote.likes, quote.liked)}
+            />
+          </View>
+        ))}
+      </Swiper>
+    </View>
+  );
+};
 
 Quotes.propTypes = {
   quotes: PropTypes.array.isRequired,
