@@ -81,10 +81,18 @@ export default (state = initialState, action) => {
         ...state,
         error: action.error,
       };
+
     case UPDATE_QUOTE_LIKES: {
+      const newLikesCount = action.quote.likes;
+      const quotes = state.quotes.map(quote => {
+        if (quote._id === action.quote._id) {
+          quote.likes = newLikesCount;
+        }
+        return quote;
+      });
       return {
         ...state,
-        quote: action.quote,
+        quotes,
       };
     }
 
