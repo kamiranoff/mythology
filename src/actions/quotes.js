@@ -78,7 +78,6 @@ export function fetchRandomQuote() {
 export function updateLikes(quoteId, likes) {
   const endpoint = `${ENV.API.QUOTES}/${quoteId}`;
 
-
   return (dispatch) => {
     dispatch(requestUpdateLikes());
     return callApi(endpoint, 'PATCH', undefined, {likes})
