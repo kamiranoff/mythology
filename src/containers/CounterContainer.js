@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { updatedQuotesLikes } from '../actions/quotes';
+import { updateQuotesLikes } from '../actions/quotes';
 import { MCounter } from '../commonComponents';
 
 class CounterContainer extends Component {
@@ -23,7 +23,7 @@ class CounterContainer extends Component {
       quoteLikes = likes + 1;
     }
     this.setState({ quoteLikes });
-    this.props.updatedQuotesLikes(quoteId, quoteLikes);
+    this.props.updateQuotesLikes(quoteId, quoteLikes);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,5 +58,5 @@ const mapStateToProps = ({
 
 export default connect(
   mapStateToProps,
-  { updatedQuotesLikes }
+  { updateQuotesLikes }
 )(CounterContainer);

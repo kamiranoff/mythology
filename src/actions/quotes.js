@@ -75,7 +75,7 @@ export function fetchRandomQuote() {
   };
 }
 
-export function updatedQuotesLikes(quoteId, likes) {
+export function updateQuotesLikes(quoteId, likes) {
   const endpoint = `${ENV.API.QUOTES}/${quoteId}`;
   return (dispatch) => {
     dispatch(requestUpdateQuotesLikes());
