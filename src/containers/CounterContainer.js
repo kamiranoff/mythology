@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
 
 import { updatedQuotesLikes } from '../actions/quotes';
 import { MCounter } from '../commonComponents';

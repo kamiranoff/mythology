@@ -17,7 +17,7 @@ const initialState = {
     book: 'The Iliad',
     author: 'Homer',
     likes: 100,
-    _id: "0",
+    _id: '0',
   }],
   quote: {
     quote: 'Loading...',
@@ -78,7 +78,6 @@ export default (state = initialState, action) => {
       };
 
     case UPDATE_QUOTE_LIKES_FAILURE:
-      console.log('here');
       return {
         ...state,
         error: action.error,

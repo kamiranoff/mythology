@@ -23,7 +23,7 @@ const MCounter = ({ onLikeButtonPressed, liked = false, likes = 0 }) => {
 
     </View>
   );
-}
+};
 
 MCounter.propTypes = {
   onLikeButtonPressed: PropTypes.func.isRequired,
