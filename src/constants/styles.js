@@ -38,6 +38,8 @@ export const BACKGROUND_3 = COLOR_4;
 export const BACKGROUND_4 = COLOR_23;
 export const BACKGROUND_5 = COLOR_24;
 
+
+export const BUTTON_TEXT_1 = COLOR_8;
 export const BORDER = COLOR_5;
 export const BORDER_2 = COLOR_24;
 export const SHADOW_1 = COLOR_9;

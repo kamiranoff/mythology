@@ -3,14 +3,14 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { FONT_SIZE_XL, TEXT_1, BACKGROUND_4, BORDER_2 } from '../../constants/styles';
+import { FONT_SIZE_XL, BUTTON_TEXT_1, BACKGROUND_4, BORDER_2 } from '../../constants/styles';
 
 export default StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: BACKGROUND_4,
-    borderRadius: 20,
+    borderRadius: 3,
     height: 45,
     marginVertical: 10,
     marginHorizontal: 50,
@@ -22,6 +22,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
     fontSize: FONT_SIZE_XL,
     backgroundColor: 'transparent',
-    color: TEXT_1,
+    color: BUTTON_TEXT_1,
   },
 });
