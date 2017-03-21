@@ -4,23 +4,14 @@ import { View } from 'react-native';
 
 import Swiper from 'react-native-swiper';
 
-import { MQuote, MArrow } from '../../commonComponents';
+import CounterContainer from '../../containers/CounterContainer';
 
-import { updateLikes } from '../../actions/quotes';
+import { MQuote, MArrow } from '../../commonComponents';
 
 import { NAVBAR_HEIGHT } from '../../constants/styles';
 import styles from './styles';
 
-const likeButtonPressed = (_updateLikes, id, likes, liked) => {
-  let updatedLikes = likes;
-  if (liked) {
-    updatedLikes = likes - 1;
-  } else {
-    updatedLikes = likes + 1;
-  }
-
-  _updateLikes(id, updatedLikes);
-};
+import { updatedQuotesLikes } from '../../actions/quotes';
 
 const Quotes = ({ quotes, liked = false, _updateLikes }) => {
   return (
@@ -40,9 +31,13 @@ const Quotes = ({ quotes, liked = false, _updateLikes }) => {
           <View key={i} style={styles.quotesContainer}>
             <MQuote
               quote={quote}
-              liked={liked}
-              onLikeButtonPressed={() => likeButtonPressed(_updateLikes, quote._id, quote.likes, quote.liked)}
-            />
+            >
+              <CounterContainer
+                liked={liked}
+                quoteId={quote._id}
+                likes={quote.likes}
+              />
+            </MQuote>
           </View>
         ))}
       </Swiper>
@@ -64,4 +59,4 @@ const mapStateToProps = ({
 });
 
 // Render to the device
-export default connect(mapStateToProps, { _updateLikes: updateLikes })(Quotes);
+export default connect(mapStateToProps, { _updatedQuotesLikes: updatedQuotesLikes })(Quotes);

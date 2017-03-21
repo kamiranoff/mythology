@@ -43,16 +43,16 @@ const receiveQuotesFailed = e => ({
   error: e,
 });
 
-const updateLikesFailure = e => ({
+const updateQuotesLikesFailure = e => ({
   type: UPDATE_QUOTE_LIKES_FAILURE,
   error: e,
 });
 
-const requestUpdateLikes = () => ({
+const requestUpdateQuotesLikes = () => ({
   type: REQUEST_UPADATE_QUOTES_LIKES,
 });
 
-const receiveUpdateLikes = quote => ({
+const receiveUpdateQuotesLikes = quote => ({
   type: UPDATE_QUOTE_LIKES,
   quote
 });
@@ -75,17 +75,16 @@ export function fetchRandomQuote() {
   };
 }
 
-export function updateLikes(quoteId, likes) {
+export function updatedQuotesLikes(quoteId, likes) {
   const endpoint = `${ENV.API.QUOTES}/${quoteId}`;
-
   return (dispatch) => {
-    dispatch(requestUpdateLikes());
+    dispatch(requestUpdateQuotesLikes());
     return callApi(endpoint, 'PATCH', undefined, {likes})
       .then((response) => {
         if (response.error) {
-          dispatch(updateLikesFailure(response.error));
+          dispatch(updateQuotesLikesFailure(response.error));
         } else {
-          dispatch(receiveUpdateLikes(response));
+          dispatch(receiveUpdateQuotesLikes(response));
         }
       });
   };
