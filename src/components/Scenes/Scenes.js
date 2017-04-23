@@ -22,7 +22,7 @@ const Scenes = Actions.create(
       key="tabbar"
       tabs
       tabBarStyle={styles.tabBarStyle}
-      tabBarIconContainerStyle={{height: null, padding: 10}}
+      tabBarIconContainerStyle={{ padding: 5}}
     >
       {/* Homepage */}
       <Scene

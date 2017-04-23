@@ -4,14 +4,11 @@ import { BACKGROUND_1, BACKGROUND_2, SHADOW_2 } from '../../constants/styles';
 
 export default StyleSheet.create({
   tabBarStyle: {
-    borderTopWidth: 0.5,
+    borderTopWidth: 1,
     borderColor: BACKGROUND_1,
     backgroundColor: BACKGROUND_2,
     opacity: 1,
-    height: 60,
-    justifyContent: 'space-around',
-    flexDirection: 'row',
-    flex: 1,
+    height:60,
   },
   navbarStyle: {
     backgroundColor: BACKGROUND_2,
