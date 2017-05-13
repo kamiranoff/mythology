@@ -11,6 +11,5 @@ export default function callApi(endpoint,
     body: JSON.stringify(body),
   })
     .then(response => response.json())
-    .then(response => response)
     .catch(error => ({ error }));
 }
